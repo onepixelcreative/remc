@@ -30,10 +30,10 @@
     p { margin: 0; }
     a { color: var(--ink); text-decoration: none; }
 
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     @media (min-width: 768px) { .container { padding: 0 40px; } }
-    section { padding: 80px 0; }
-    @media (min-width: 768px) { section { padding: 120px 0; } }
+    section { padding: 64px 0; }
+    @media (min-width: 768px) { section { padding: 96px 0; } }
 
     .eyebrow {
       display: inline-block; font-size: 12px; font-weight: 600;
