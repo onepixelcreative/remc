@@ -61,6 +61,7 @@
     .btn-whatsapp:hover { background: #1da851; }
 
     .logo { display: inline-flex; align-items: center; gap: 2px; }
+    .logo-img { display: block; height: 30px; width: auto; }
     .logo-globe { width: 30px; height: 30px; margin-right: -9px; z-index: 1; position: relative; }
     .logo-wordmark {
       font-family: 'Space Grotesk', sans-serif; font-weight: 700;
