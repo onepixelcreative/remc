@@ -27,10 +27,34 @@ CONTENT
   blog-outsourced-cost.html        SEO article — in-house vs outsourced cost
 
 ==========================================
+SHARED STYLESHEET
+==========================================
+  styles.css                       Shared design system (tokens, reset, nav,
+                                   footer, buttons + homepage components). Linked
+                                   by every page — edit shared styling here ONCE.
+                                   Page-specific rules stay in each page's inline
+                                   <style> and override the shared sheet.
+                                   NOTE: the colour palette is unified on the
+                                   homepage values; the blog/store pages had
+                                   drifted to a slightly different blue/grey and
+                                   are now consistent with the rest of the site.
+
+==========================================
 2 BINARY ASSETS (must travel with HTML)
 ==========================================
   hero-switchroom.mp4              Homepage hero animation (8s, 720p, ~3.2 MB)
   REMC-Estimating-Guide.pdf        Email-gated lead magnet (~230 KB)
+
+==========================================
+NOT DEPLOYED — FULFILMENT ONLY
+==========================================
+  _private/products/               Paid store products (The Estimator, The Enquiry
+                                   Register spreadsheets). Kept OUT of the public
+                                   web root so they aren't freely downloadable —
+                                   deliver them via Stripe after purchase.
+
+See GO-LIVE.md for the full pre-launch checklist. Search the HTML for
+"GO-LIVE TODO" to jump straight to each thing that still needs wiring.
 
 ==========================================
 NAVIGATION (CONSISTENT ACROSS ALL PAGES)
@@ -119,7 +143,9 @@ TECHNICAL SEO TO ADD BEFORE LAUNCH
 ==========================================
 DEPLOY
 ==========================================
-1. Drop the contents of this folder into the web root, preserving filenames
+1. Drop the web-root files into the web root, preserving filenames (the 12 .html,
+   styles.css, hero-switchroom.mp4, REMC-Estimating-Guide.pdf, logo + OG images).
+   DO NOT deploy the _private/ folder (paid products — see above).
 2. Set up URL routing per the URL STRUCTURE section above
 3. Add robots.txt, sitemap.xml, favicons
 4. Wire Stripe with live keys
