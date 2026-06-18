@@ -91,6 +91,7 @@
       padding: 8px 14px; border-radius: 8px; transition: background 0.2s;
     }
     .nav-links a:hover { background: var(--brand-tint); color: var(--brand); }
+    .nav-links a.active { background: var(--brand-tint); color: var(--brand); }
     .nav .btn { padding: 10px 18px; font-size: 14px; }
 
     /* HERO */
