@@ -41,22 +41,22 @@
     p { margin: 0 0 18px; }
     p:last-child { margin-bottom: 0; }
     .article-body a { color: var(--brand); border-bottom: 1px solid var(--brand-light); padding-bottom: 1px; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
     .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 24px; }
     @media (min-width: 768px) { .container-narrow { padding: 0 40px; } }
-    section { padding: 56px 0; }
-    @media (min-width: 768px) { section { padding: 80px 0; } }
+    
+    
     .lead { font-size: clamp(18px, 1.6vw, 22px); color: var(--body); line-height: 1.55; max-width: 64ch; }
-    header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid transparent; z-index: 100; transition: border-color 0.3s, background 0.3s; }
-    header.scrolled { border-bottom-color: var(--divider-soft); }
-    .nav-links { display: none; gap: 4px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); padding: 8px 12px; border-radius: 8px; transition: background 0.2s; }
-    .nav-links a.active { background: var(--brand-tint); color: var(--brand); }
-    .page-hero { padding: 80px 0 40px; background: var(--brand-soft); border-bottom: 1px solid var(--divider-soft); }
-    .page-hero h1 { margin: 0 0 22px; max-width: 22ch; }
-    .page-hero .lead { margin: 0; }
-    .page-hero .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
-    .page-hero .breadcrumb a { color: var(--muted); border-bottom: 1px dotted var(--muted); }
+    
+    
+    
+    
+    
+    .page-hero { padding: 80px 0 40px; background: var(--brand-soft); border-bottom: 1px solid var(--divider-soft); text-align: center; }
+    .page-hero h1 { margin: 0 auto 22px; max-width: 22ch; }
+    .page-hero .lead { margin: 0 auto; }
+    
+    
     .service-detail {
           display: grid; grid-template-columns: 1fr; gap: 32px;
           padding: 56px 0; border-bottom: 1px solid var(--divider-soft);
@@ -118,10 +118,7 @@
   <header id="header">
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="logo">
-          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-          <span class="logo-wordmark">remc</span>
-        </a>
+        <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
         <ul class="nav-links">
           <li><a href="services.html" class="active">Services</a></li>
           <li><a href="plans.html">Plans</a></li>
@@ -138,7 +135,6 @@
 
   <section class="page-hero">
     <div class="container-narrow">
-      <p class="breadcrumb"><a href="index.html">Home</a> · Services</p>
       <span class="eyebrow">Services</span>
       <h1>Outsourced electrical estimating — end to end.</h1>
       <p class="lead">From document triage to a qualified, submission-ready bid pack. REMC handles the full preconstruction workflow for UK electrical contractors — Glasgow-based, working with contractors across the United Kingdom.</p>
@@ -288,10 +284,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-            <span class="logo-wordmark">remc</span>
-          </a>
+          <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo-white.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
           <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
           <div class="nap">
             <strong>REMC Ltd</strong>

@@ -51,33 +51,32 @@
     .article-body a { color: var(--brand); border-bottom: 1px solid var(--brand); padding-bottom: 1px; }
     .article-body ul, .article-body ol { margin: 1.3em 0 1.3em 24px; }
     .article-body li { margin-bottom: 0.6em; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 64px 0; }
+    
+    
     .article-container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
     @media (min-width: 768px) { .article-container { padding: 0 40px; } }
     .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand); margin-bottom: 14px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-weight: 600; font-size: 15px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.18s ease; font-family: inherit; text-decoration: none; line-height: 1; }
-    .btn-primary { background: var(--brand); color: white; }
-    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); color: white; border-bottom: none; }
+    
+    
+    
     .btn-light { background: white; color: var(--brand); border: 1.5px solid var(--brand); }
     .btn-light:hover { background: var(--brand); color: white; }
     .btn-dark { background: var(--ink); color: white; }
-    .logo { display: inline-flex; align-items: center; gap: 2px; text-decoration: none; }
-    .logo-globe { width: 32px; height: 32px; margin-right: -10px; z-index: 1; position: relative; }
-    .logo-wordmark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; color: var(--brand); letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative; }
-    header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(10px); -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid transparent; z-index: 100; transition: border-color 0.2s; }
-    header.scrolled { border-bottom-color: var(--divider); }
-    header::before { content: ''; display: block; height: 3px; background: var(--accent-red); width: 100%; }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .nav-links { display: none; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--brand); }
-    .nav-links a.active { color: var(--brand); font-weight: 600; }
-    .nav .btn-primary { padding: 11px 18px; font-size: 14px; }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     .article-header { padding: 48px 0 32px; background: var(--brand-soft); border-bottom: 1px solid var(--divider); }
     .article-header h1 { margin: 16px 0 24px; }
-    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
-    .breadcrumb a { color: var(--muted); border-bottom: 1px dotted var(--muted); }
+    
+    
     .article-meta-top { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); align-items: center; margin-top: 8px; }
     .author-pill { display: inline-flex; align-items: center; gap: 8px; }
     .author-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-tint); color: var(--brand); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; }
@@ -135,10 +134,7 @@
   <header id="header">
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="logo">
-          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-          <span class="logo-wordmark">remc</span>
-        </a>
+        <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
         <ul class="nav-links">
           <li><a href="services.html">Services</a></li>
           <li><a href="plans.html">Plans</a></li>
@@ -155,7 +151,6 @@
 
   <section class="article-header">
     <div class="article-container">
-      <div class="breadcrumb"><a href="index.html">remc</a> &nbsp;›&nbsp; <a href="blog.html">Blog</a> &nbsp;›&nbsp; Tender Margin Leaks</div>
       <span class="eyebrow">Diagnosis · 10 min read</span>
       <h1>Why You're Losing Electrical Tenders by 0.5%: The 6 Margin Leaks Hurting UK Contractors</h1>
       <div class="article-meta-top">
@@ -292,10 +287,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-            <span class="logo-wordmark">remc</span>
-          </a>
+          <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo-white.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
           <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
           <div class="footer-nap" style="margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7);">
             <strong style="color: white; display: block; margin-bottom: 4px;">REMC Ltd</strong>
