@@ -77,17 +77,18 @@
     
     
     
-    .hero { padding: 64px 0 56px; }
-    .hero-inner { max-width: 880px; }
-    .hero h1 { margin: 0 0 22px; max-width: 16ch; }
+    .hero { padding: 64px 0 56px; min-height: 0; }
+    .hero-inner { max-width: 880px; margin: 0 auto; }
+    .hero-inner > * { opacity: 1; animation: none; }
+    .hero h1 { margin: 0 auto 22px; max-width: 24ch; }
     .hero-subhead {
           font-size: clamp(17px, 1.3vw, 19px);
           color: var(--body);
-          margin-bottom: 32px;
-          max-width: 52ch;
+          margin: 0 auto 32px;
+          max-width: 56ch;
           line-height: 1.55;
         }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; }
     .price-pill {
           display: inline-flex; align-items: center; gap: 6px;
           font-size: 13px; padding: 7px 14px;
@@ -286,7 +287,7 @@
           <li><a href="case-studies.html">Case studies</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="store.html">Store</a></li>
+          <li><a href="store.html" class="active">Store</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="#products" class="btn btn-primary">Browse store</a>
