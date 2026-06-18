@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | remc — Insights for UK electrical estimators</title>
+  <meta name="description" content="Practical, data-led articles for UK electrical contractors and estimators — from tender pricing to growing your contracting business. Written by REMC's founder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Calendly assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --brand: #2046F8; --brand-dark: #1837D6; --brand-light: #3D5FF9;
+      --brand-tint: #EEF2F8; --brand-soft: #F4F6FB;
+      --ink: #0a0e27; --body: #374151; --muted: #6B7280;
+      --divider: #E5E7EB; --bg: #FFFFFF; --globe: #C7D2E2; --accent-red: #C8102E;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--body); background: var(--bg); line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--ink); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(38px, 5vw, 60px); letter-spacing: -0.035em; }
+    h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 12px; letter-spacing: -0.025em; }
+    h3 { font-size: clamp(20px, 2.4vw, 24px); }
+    p { margin-bottom: 1em; max-width: 64ch; }
+    a { color: var(--ink); text-decoration: none; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    section { padding: 64px 0; }
+    @media (min-width: 768px) { section { padding: 96px 0; } }
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand); margin-bottom: 14px; }
+    .lead { font-size: 18px; color: var(--body); max-width: 62ch; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-weight: 600; font-size: 15px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.18s ease; font-family: inherit; text-decoration: none; line-height: 1; }
+    .btn-primary { background: var(--brand); color: white; }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--ink); border-bottom: 1.5px solid var(--brand); padding: 8px 0; border-radius: 0; font-weight: 600; }
+    .btn-ghost:hover { color: var(--brand); }
+
+    /* LOGO */
+    .logo { display: inline-flex; align-items: center; gap: 2px; text-decoration: none; }
+    .logo-globe { width: 32px; height: 32px; margin-right: -10px; z-index: 1; position: relative; }
+    .logo-wordmark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; color: var(--brand); letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative; }
+    .logo-globe svg { width: 100%; height: 100%; }
+    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line { fill: none; stroke: var(--globe); stroke-width: 0.7; }
+    footer .logo-wordmark { color: white; }
+    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line { stroke: rgba(255,255,255,0.35); }
+
+    header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(10px); -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid transparent; z-index: 100; transition: border-color 0.2s; }
+    header.scrolled { border-bottom-color: var(--divider); }
+    header::before { content: ''; display: block; height: 3px; background: var(--accent-red); width: 100%; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-links { display: none; gap: 32px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-links a.active { color: var(--brand); font-weight: 600; }
+    .nav .btn-primary { padding: 11px 18px; font-size: 14px; }
+
+    /* HERO */
+    .hero { padding: 64px 0 56px; }
+    .hero h1 { margin: 0 0 22px; max-width: 18ch; }
+    .hero-subhead { font-size: clamp(17px, 1.3vw, 19px); color: var(--body); margin-bottom: 32px; max-width: 60ch; line-height: 1.55; }
+
+    /* FEATURED ARTICLE */
+    .featured {
+      background: linear-gradient(135deg, var(--ink) 0%, #0c1230 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 900px) { .featured { grid-template-columns: 1.2fr 1fr; padding: 64px; gap: 56px; } }
+    .featured::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(32, 70, 248, 0.35), transparent 60%);
+      pointer-events: none;
+    }
+    .featured > * { position: relative; z-index: 1; }
+    .featured .eyebrow { color: var(--brand-light); }
+    .featured h2 { color: white; font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 16px; }
+    .featured p { color: rgba(255,255,255,0.78); font-size: 17px; margin-bottom: 24px; }
+    .featured-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+    .featured .btn-light { background: white; color: var(--brand); border: none; }
+    .featured .btn-light:hover { background: var(--brand-light); color: white; }
+    .featured-visual {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(32,70,248,0.25);
+      border-radius: 12px;
+      padding: 24px;
+      align-self: center;
+    }
+    .visual-stat {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .visual-stat:last-child { border-bottom: none; }
+    .visual-stat .label { font-size: 13px; color: rgba(255,255,255,0.7); }
+    .visual-stat .value { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; color: white; }
+    .visual-stat .value .accent { color: var(--brand-light); }
+
+    /* ARTICLE GRID */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .article-card {
+      background: white;
+      border: 1px solid var(--divider);
+      border-radius: 14px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+    }
+    .article-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(32, 70, 248, 0.1);
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .article-category {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand);
+      font-size: 11px;
+    }
+    .article-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .article-card h3 a:hover { color: var(--brand); }
+    .article-card p {
+      font-size: 15px;
+      color: var(--body);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .article-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand);
+      border-bottom: 1.5px solid var(--brand);
+      padding-bottom: 2px;
+      align-self: flex-start;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--brand-tint);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+    }
+    .newsletter h3 { font-size: 28px; margin-bottom: 12px; }
+    .newsletter p { font-size: 16px; max-width: 56ch; margin: 0 auto 24px; }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      font-family: inherit;
+      font-size: 15px;
+      border: 1.5px solid var(--divider);
+      border-radius: 6px;
+      background: white;
+    }
+    .newsletter-form input:focus { outline: none; border-color: var(--brand); }
+    .newsletter-meta { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; } }
+    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
+    footer a:hover { color: var(--brand-light); }
+    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand .contact { margin-top: 18px; font-size: 13px; line-height: 1.8; }
+    .footer-brand .contact a { color: rgba(255,255,255,0.85); display: block; }
+    .footer-base { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
+    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+
+    .section-header { max-width: 740px; margin-bottom: 48px; }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/><ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/><line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/><ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+          <span class="logo-wordmark">remc</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">REMC Blog · Field notes</span>
+      <h1>Practical writing for people who price electrical work.</h1>
+      <p class="hero-subhead">Data-led articles from the desk of REMC. No fluff. No vague generalities. Real numbers, real workflows, real lessons from the tenders we price.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLE -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="featured">
+        <div>
+          <span class="eyebrow">Featured · Decision-stage</span>
+          <h2>In-House vs Outsourced Electrical Estimator: True-Cost UK Breakdown (2026)</h2>
+          <p>You're about to put an advert up for a £55,000 estimator. Before you do, sit down for five minutes. The loaded cost is closer to £74,000 — and that's before the recruitment risk lands. Here's the maths in full.</p>
+          <div class="featured-meta">
+            <span>12 min read</span>
+            <span>·</span>
+            <span>UK · 2026</span>
+            <span>·</span>
+            <span>By REMC</span>
+          </div>
+          <a href="blog-outsourced-cost.html" class="btn btn-light">Read the article →</a>
+        </div>
+        <div class="featured-visual">
+          <div class="visual-stat"><span class="label">In-house gross salary</span><span class="value">£55,000</span></div>
+          <div class="visual-stat"><span class="label">+ NI, pension, leave</span><span class="value">£12,215</span></div>
+          <div class="visual-stat"><span class="label">+ software, desk, recruit</span><span class="value">£5,750</span></div>
+          <div class="visual-stat"><span class="label">+ ramp &amp; retention risk</span><span class="value">£8–20k</span></div>
+          <div class="visual-stat"><span class="label">Year 1 loaded cost</span><span class="value"><span class="accent">~£85–95k</span></span></div>
+          <div class="visual-stat"><span class="label">REMC equivalent</span><span class="value"><span class="accent">~¼ of that</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL ARTICLES -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">All articles</span>
+        <h2>Three articles to read this month.</h2>
+        <p class="lead">Each one written for a different stage of the buying journey — and a different kind of contractor. Pick the one that matches where you are right now.</p>
+      </div>
+
+      <div class="grid">
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="article-category">Decision</span>
+            <span>·</span>
+            <span>12 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+          <h3><a href="blog-outsourced-cost.html">In-House vs Outsourced Electrical Estimator: True-Cost UK Breakdown</a></h3>
+          <p>The full loaded cost of hiring a £55k estimator, the hidden costs nobody factors in, and a 5-question framework to decide which way to go.</p>
+          <a href="blog-outsourced-cost.html" class="article-link">Read article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="article-category">Diagnosis</span>
+            <span>·</span>
+            <span>10 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+          <h3><a href="blog-margin-leaks.html">Why You're Losing Electrical Tenders by 0.5%: 6 Margin Leaks UK Contractors Miss</a></h3>
+          <p>A contractor lost £312k by £1,400. He thought it was bad luck. It wasn't. Here are the six margin leaks we see most often — and how to fix each.</p>
+          <a href="blog-margin-leaks.html" class="article-link">Read article →</a>
+        </article>
+
+        <article class="article-card">
+          <div class="article-meta">
+            <span class="article-category">How-to</span>
+            <span>·</span>
+            <span>14 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+          <h3><a href="blog-first-tender-guide.html">How to Price Your First Electrical Tender: A UK Step-by-Step Guide</a></h3>
+          <p>The 9-step workflow we use at REMC on every tender — from triaging the documents to applying mark-up. Built for first-time estimators and owner-pricers.</p>
+          <a href="blog-first-tender-guide.html" class="article-link">Read article →</a>
+        </article>
+
+        <article class="article-card" style="background: var(--brand-soft); border-style: dashed;">
+          <div class="article-meta">
+            <span class="article-category">Coming next</span>
+          </div>
+          <h3 style="opacity: 0.7;">More articles in development</h3>
+          <p>New posts arrive monthly. Drop your email below to be told when each lands — and to get the quarterly UK Electrical Tender Index report drawn from our enquiry register.</p>
+          <a href="#newsletter" class="article-link">Get notified →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" style="padding-top: 0;">
+    <div class="container">
+      <div class="newsletter">
+        <span class="eyebrow">Subscribe</span>
+        <h3>Get the next article in your inbox.</h3>
+        <p>One thoughtful email per month. New articles, the quarterly UK Electrical Tender Index, and the occasional unannounced template. No spam, ever. Unsubscribe with one click.</p>
+        <form class="newsletter-form" action="mailto:enquire@remc.uk" method="post">
+          <input type="email" name="email" placeholder="your@email.co.uk" required>
+          <button type="submit" class="btn btn-primary">Subscribe →</button>
+        </form>
+        <p class="newsletter-meta">By subscribing you agree to receive the REMC monthly digest. Hosted by us. Your email stays with us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+            <span class="logo-wordmark">remc</span>
+          </a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="footer-nap" style="margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7);">
+            <strong style="color: white; display: block; margin-bottom: 4px;">REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk" style="color: rgba(255,255,255,0.85); display: block; margin-top: 8px;">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278" style="color: rgba(255,255,255,0.85); display: block;">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk" style="color: rgba(255,255,255,0.85); display: block;">LinkedIn →</a>
+          </div>
+        </div>
+        <div>
+          <h4>Blog</h4>
+          <ul>
+            <li><a href="blog-outsourced-cost.html">In-House vs Outsourced</a></li>
+            <li><a href="blog-margin-leaks.html">Tender Margin Leaks</a></li>
+            <li><a href="blog-first-tender-guide.html">Price Your First Tender</a></li>
+          </ul>
+        </div>
+                <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#plans">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="index.html#contact">Book a call</a></li>
+            <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
+            <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394</div>
+        <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+  
+    /* CALENDLY — intercept call & discuss CTAs sitewide */
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

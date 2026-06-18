@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies | remc — Priority Plan clients in their own words</title>
+  <meta name="description" content="In-depth case studies from three REMC Priority Plan clients — Enlite Electrical, G-Tech Electrical and Oracle M&E — on what changed when they outsourced their electrical estimating.">
+  <link rel="canonical" href="https://remc.uk/case-studies/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Case Studies | REMC — Priority Plan clients in their own words">
+  <meta property="og:description" content="Three UK electrical contractors on what changed when they moved tender pricing into REMC.">
+  <meta property="og:url" content="https://remc.uk/case-studies/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --brand: #2147f9; --brand-dark: #1837D6; --brand-light: #4d6dfb;
+      --brand-tint: #EEF2F8; --brand-soft: #F7F9FE;
+      --ink: #0a0e27; --line: #111114;
+      --body: #4B5563; --muted: #9CA3AF;
+      --divider: #E5E7EB; --divider-soft: #F0F2F5;
+      --bg: #FFFFFF; --globe: #C7D2E2; --accent-red: #C8102E;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--body); background: var(--bg); line-height: 1.55; font-size: 17px;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    body::before { content: ''; display: block; height: 3px; background: var(--accent-red); }
+
+    h1, h2, h3, h4 {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      color: var(--ink); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
+    }
+    h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -0.04em; }
+    h2 { font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -0.03em; }
+    h3 { font-size: clamp(18px, 2vw, 22px); letter-spacing: -0.02em; }
+    p { margin: 0; }
+    a { color: var(--ink); text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    section { padding: 80px 0; }
+    @media (min-width: 768px) { section { padding: 96px 0; } }
+
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--brand); padding: 6px 12px;
+      background: var(--brand-tint); border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--body); line-height: 1.55; max-width: 64ch; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 26px; font-weight: 600; font-size: 15px;
+      border-radius: 12px; border: none; cursor: pointer;
+      transition: all 0.2s ease; font-family: inherit;
+      text-decoration: none; line-height: 1;
+    }
+    .btn-primary { background: var(--ink); color: white; }
+    .btn-primary:hover { background: #050813; transform: translateY(-1px); }
+    .btn-brand { background: var(--brand); color: white; }
+    .btn-brand:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--divider); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    .logo { display: inline-flex; align-items: center; gap: 2px; }
+    .logo-globe { width: 30px; height: 30px; margin-right: -9px; z-index: 1; position: relative; }
+    .logo-wordmark {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 26px; color: var(--brand);
+      letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative;
+    }
+    .logo-globe svg { width: 100%; height: 100%; }
+    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line {
+      fill: none; stroke: var(--globe); stroke-width: 0.7;
+    }
+    footer .logo-wordmark { color: white; }
+    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line { stroke: rgba(255,255,255,0.35); }
+
+    header {
+      position: sticky; top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid transparent;
+      z-index: 100; transition: border-color 0.3s, background 0.3s;
+    }
+    header.scrolled { border-bottom-color: var(--divider-soft); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: none; gap: 4px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: var(--ink);
+      padding: 8px 12px; border-radius: 8px; transition: background 0.2s;
+    }
+    .nav-links a:hover { background: var(--brand-tint); color: var(--brand); }
+    .nav-links a.active { background: var(--brand-tint); color: var(--brand); }
+    .nav .btn { padding: 10px 18px; font-size: 14px; }
+
+    .page-hero { padding: 96px 0 40px; text-align: center; }
+    .page-hero h1 { margin: 0 auto 24px; max-width: 18ch; }
+    .page-hero .lead { margin: 0 auto; }
+
+    .case-list { display: flex; flex-direction: column; gap: 16px; padding: 16px 0 0; }
+
+    .case-card {
+      background: white;
+      border: 1px solid var(--divider);
+      border-radius: 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+    .case-card:hover { border-color: var(--brand); box-shadow: 0 8px 24px rgba(10,14,39,0.04); }
+    .case-card[open] { border-color: var(--brand); box-shadow: 0 12px 32px rgba(33,71,249,0.08); }
+
+    .case-summary-row {
+      display: grid;
+      grid-template-columns: 72px 1fr 28px;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 22px;
+      cursor: pointer;
+      list-style: none;
+    }
+    @media (min-width: 768px) {
+      .case-summary-row {
+        grid-template-columns: 96px 1.4fr 1.6fr auto 28px;
+        gap: 28px;
+        padding: 24px 28px;
+      }
+    }
+    .case-summary-row::-webkit-details-marker { display: none; }
+
+    .case-portrait {
+      width: 72px; height: 72px; border-radius: 16px;
+      object-fit: cover; background: var(--divider-soft);
+      border: 1px solid var(--divider);
+    }
+    @media (min-width: 768px) {
+      .case-portrait { width: 96px; height: 96px; border-radius: 18px; }
+    }
+
+    .case-identity .case-company {
+      font-size: 18px; font-weight: 700; color: var(--ink);
+      letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 2px;
+    }
+    @media (min-width: 768px) {
+      .case-identity .case-company { font-size: 22px; }
+    }
+    .case-identity .case-attribution {
+      font-size: 14px; color: var(--body); line-height: 1.4;
+    }
+    .case-identity .case-attribution strong { color: var(--ink); font-weight: 600; }
+    .case-identity .case-meta {
+      display: block;
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .case-teaser {
+      display: none;
+      font-size: 14px; color: var(--body);
+      font-style: italic; line-height: 1.45;
+      padding-left: 18px; border-left: 2px solid var(--brand);
+      max-width: 42ch;
+    }
+    @media (min-width: 768px) { .case-teaser { display: block; } }
+
+    .case-pill {
+      display: none;
+      align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700;
+      padding: 5px 11px;
+      background: var(--brand-tint); color: var(--brand);
+      border-radius: 100px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    @media (min-width: 768px) { .case-pill { display: inline-flex; } }
+    .case-pill::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--brand); border-radius: 50%;
+    }
+
+    .case-chevron {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; color: var(--muted);
+      transition: transform 0.25s ease, color 0.2s;
+    }
+    .case-card[open] .case-chevron { transform: rotate(180deg); color: var(--brand); }
+    .case-chevron svg { width: 18px; height: 18px; }
+
+    .case-mobile-extras {
+      display: block; grid-column: 1 / -1;
+      padding: 0 22px 16px;
+    }
+    @media (min-width: 768px) { .case-mobile-extras { display: none; } }
+    .case-mobile-extras .case-pill { display: inline-flex; margin-bottom: 10px; }
+    .case-mobile-extras .case-teaser {
+      display: block; font-size: 13px; color: var(--body);
+      font-style: italic; line-height: 1.45;
+      padding-left: 14px; border-left: 2px solid var(--brand);
+    }
+
+    .case-body {
+      padding: 8px 22px 32px;
+      border-top: 1px solid var(--divider-soft);
+    }
+    @media (min-width: 768px) { .case-body { padding: 24px 96px 40px; } }
+
+    .case-summary-quote {
+      font-size: clamp(17px, 1.6vw, 20px); line-height: 1.5;
+      color: var(--ink); font-weight: 500; letter-spacing: -0.015em;
+      margin: 24px 0 32px;
+    }
+
+    .qa-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 768px) { .qa-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+
+    .qa-block {
+      background: var(--brand-soft);
+      border: 1px solid var(--divider-soft);
+      border-radius: 14px;
+      padding: 22px 22px;
+    }
+    .qa-block .q-label {
+      display: block; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.14em; color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .qa-block h3 { font-size: 16px; margin-bottom: 12px; line-height: 1.3; color: var(--ink); }
+    .qa-block p { font-size: 14px; color: var(--body); line-height: 1.6; }
+    .qa-block p + p { margin-top: 10px; }
+    .qa-block.full { grid-column: 1 / -1; }
+
+    .pull-quote {
+      background: var(--ink); border-radius: 16px;
+      padding: 28px 32px; margin: 32px 0 28px;
+      font-size: clamp(18px, 2vw, 22px); line-height: 1.45;
+      color: white; font-weight: 500; letter-spacing: -0.015em;
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '"'; position: absolute; left: 16px; top: -8px;
+      font-family: Georgia, serif; font-size: 64px;
+      color: var(--brand); line-height: 1;
+    }
+    .pull-quote .author {
+      display: block; font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.6); margin-top: 12px;
+    }
+
+    .project-refs {
+      background: white; border: 1px solid var(--divider);
+      border-radius: 14px; padding: 24px 24px; margin-top: 20px;
+    }
+    .project-refs h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 14px; font-weight: 700; }
+    .project-refs ul { list-style: none; padding: 0; margin: 0; }
+    .project-refs li {
+      font-size: 14px; padding: 10px 0;
+      border-bottom: 1px solid var(--divider-soft);
+      color: var(--body); line-height: 1.5;
+    }
+    .project-refs li:last-child { border-bottom: 0; }
+    .project-refs li strong { color: var(--ink); font-weight: 600; margin-right: 8px; }
+
+    .cta-banner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, var(--ink) 0%, #14213f 100%);
+      color: white; border-radius: 28px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(33, 71, 249, 0.4), transparent 60%);
+    }
+    .cta-banner > * { position: relative; }
+    .cta-banner h2 { color: white; margin-bottom: 16px; max-width: 18ch; margin-left: auto; margin-right: auto; }
+    .cta-banner p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 60ch; margin: 16px auto 32px; }
+    .cta-banner .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-banner .btn-brand { background: var(--brand); }
+    .cta-banner .btn-ghost { background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.2); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; } }
+    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
+    footer a:hover { color: var(--brand-light); }
+    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand .nap { margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+    .footer-brand .nap strong { color: white; display: block; margin-bottom: 4px; }
+    .footer-brand .nap a { color: rgba(255,255,255,0.85); display: block; font-size: 13px; }
+    .footer-base { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
+    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/><ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/><line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/><ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+          <span class="logo-wordmark">remc</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="case-studies.html" class="active">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Case studies</span>
+      <h1>Priority Plan clients, in their own words.</h1>
+      <p class="lead">Three UK electrical contractors on what changed when they moved tender pricing out of the directors' inbox and into REMC. Click any client to expand the full case study.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="case-list">
+
+        <details class="case-card" id="enlite">
+          <summary class="case-summary-row">
+            <img class="case-portrait" alt="Reed Cameron, Director of Enlite Electrical"
+                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces&auto=format&q=80">
+            <div class="case-identity">
+              <div class="case-company">Enlite Electrical</div>
+              <div class="case-attribution"><strong>Reed Cameron</strong> · Director</div>
+              <span class="case-meta">Commercial fit-out · Scotland</span>
+            </div>
+            <p class="case-teaser">"We've stopped pricing on weekends. Win-rate's up too."</p>
+            <span class="case-pill">Priority plan</span>
+            <span class="case-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="case-mobile-extras">
+            <span class="case-pill">Priority plan</span>
+            <p class="case-teaser">"We've stopped pricing on weekends. Win-rate's up too."</p>
+          </div>
+          <div class="case-body">
+            <p class="case-summary-quote">REMC has taken commercial estimating off the director's desk completely. Reed's stopped pricing on weekends, the business is tendering more work, and submissions land qualified and on time.</p>
+            <div class="qa-grid">
+              <div class="qa-block"><span class="q-label">Q1 · Before REMC</span><h3>"I was pricing at midnight."</h3><p>Estimating sat on my desk. I'd come back to the office after a site day and start pricing around 7pm. Smaller domestic and refurb tenders were getting dropped because I genuinely didn't have time, and the bigger commercial ones were going out at 11:58pm on the deadline with no time to sense-check the qualifications.</p><p>The frustrating part was knowing I was leaving margin on the table just because I was tired by the time I got to the mark-up.</p></div>
+              <div class="qa-block"><span class="q-label">Q2 · Workload returned</span><h3>"12–15 director hours a week back."</h3><p>REMC took roughly two full director days a week off me. The operations side of the business has noticed the most — I'm actually on site when I should be, not back in the office pricing.</p><p>Evenings and weekends are mine again. That's not a marketing line; it's the single biggest practical change.</p></div>
+              <div class="qa-block"><span class="q-label">Q3 · Tenders we'd be walking away from</span><h3>"6–8 a month would never have gone out."</h3><p>We're pricing 10–12 tenders a month now. Without REMC we'd realistically be down to three or four — only the strategic ones I'd make time for personally. The rest would be politely declined.</p></div>
+              <div class="qa-block"><span class="q-label">Q4 · Confidence in handing over</span><h3>"From spot-checking everything to barely looking."</h3><p>First few months I'd review every BOQ line. By tender ten I was reviewing the qualifications only. Commercial fit-out I hand over without a second thought. Industrial work I'd still look at given we do less of it, but that's about my familiarity, not REMC.</p></div>
+              <div class="qa-block"><span class="q-label">Q5 · Accuracy of pricing</span><h3>"Win rate is the best we've had."</h3><p>REMC caught a missing fire-alarm panel allowance on an education-sector tender that would have been a four-figure hit. Main contractors have commented on the quality of our submissions — one specifically said our qualifications page was the clearest they'd seen on that bid.</p><p>Prices have held against actual job costs at delivery.</p></div>
+              <div class="qa-block"><span class="q-label">Q6 · Transparency</span><h3>"I can interrogate any line."</h3><p>The BOQ comes back built up line by line — labour per item, materials per item, mark-up separated, prelims separated. When I've had to defend a price to a main contractor on a post-tender review, REMC's working covered me.</p></div>
+              <div class="qa-block"><span class="q-label">Q7 · Hitting deadlines</span><h3>"Never caused a missed submission."</h3><p>One tender had a sub quote come in 36 hours late. REMC flagged it immediately, gave me the option to qualify and submit anyway, and had the revised BOQ in my inbox the same morning. That's the kind of comms you want when a deadline is tight.</p></div>
+              <div class="qa-block"><span class="q-label">Q8 · Response time on queries</span><h3>"A few hours, faster when it matters."</h3><p>Standard queries during business hours come back inside two or three hours with a substantive answer — not just an acknowledgement. When we're near a deadline and I email in the evening, I'll get a reply that night. They're collaborative, not transactional.</p></div>
+              <div class="qa-block"><span class="q-label">Q9 · Onboarding</span><h3>"Useful by week two."</h3><p>Took about a week from signing to first priced tender. REMC asked for a recent BOQ to learn our house format, a list of our preferred suppliers and subs, and the rate sheets I had to hand. By the second tender it felt like they'd been with us for months.</p></div>
+              <div class="qa-block"><span class="q-label">Q10 · What I'd tell another contractor</span><h3>"Stop trying to do it yourself."</h3><p>The opportunity cost of pricing your own tenders as a director is killing your delivery side. You think you're saving money by not paying for it; you're actually losing margin on every job you mis-price and every tender you don't get to.</p><p>Pay someone competent to do it. REMC's that for us.</p></div>
+              <div class="qa-block full"><span class="q-label">Q11 · What we'd like REMC to do better</span><h3>"Monthly capacity reporting could be slicker."</h3><p>End of the month I'd like to see hours used vs. plan capacity automatically — a one-page summary I can glance at, not something I have to ask for. Minor in the scheme of things.</p></div>
+            </div>
+            <div class="pull-quote">Pay someone competent to do it. REMC's that for us.<span class="author">— Reed Cameron, Director, Enlite Electrical</span></div>
+            <div class="project-refs">
+              <h3>Representative project types REMC has priced for Enlite</h3>
+              <ul>
+                <li><strong>Education refurbishment</strong> — phased works across an occupied site, £100k–£250k</li>
+                <li><strong>Commercial fit-out</strong> — full electrical package, £250k–£500k</li>
+                <li><strong>Hospitality refurbishment</strong> — tight programme, multiple visits, £50k–£100k</li>
+                <li><strong>Healthcare ancillary works</strong> — out-of-hours installation, £100k–£250k</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-card" id="gtech">
+          <summary class="case-summary-row">
+            <img class="case-portrait" alt="Guy Wakefield, Director of G-Tech Electrical"
+                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=faces&auto=format&q=80">
+            <div class="case-identity">
+              <div class="case-company">G-Tech Electrical</div>
+              <div class="case-attribution"><strong>Guy Wakefield</strong> · Director</div>
+              <span class="case-meta">Industrial &amp; commercial · UK-wide</span>
+            </div>
+            <p class="case-teaser">"An estimating function without the hiring risk."</p>
+            <span class="case-pill">Priority plan</span>
+            <span class="case-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="case-mobile-extras">
+            <span class="case-pill">Priority plan</span>
+            <p class="case-teaser">"An estimating function without the hiring risk."</p>
+          </div>
+          <div class="case-body">
+            <p class="case-summary-quote">REMC is functionally an estimating department for G-Tech, without the £75k+ loaded cost of a senior hire. They're tendering more, the win rate has lifted, and the operations director has stopped being pulled into pricing.</p>
+            <div class="qa-grid">
+              <div class="qa-block"><span class="q-label">Q1 · Before REMC</span><h3>"Our junior estimator left."</h3><p>Mid-2025 our junior estimator moved on. Bringing in a senior would have meant £55–60k base, plus the loaded cost — £75k all-in once you factor in pension, recruitment, software, the lot. We weren't sure the tender volume justified it yet.</p><p>So I was juggling pricing alongside running operations. It worked, just barely, and we were turning down more than we were submitting.</p></div>
+              <div class="qa-block"><span class="q-label">Q2 · Workload returned</span><h3>"Roughly three days a week back."</h3><p>Pricing is no longer on my desk. The operations director has stopped being roped in. Both of us are doing the jobs we should be doing — running projects, managing the team, talking to clients — instead of pricing at the kitchen table.</p></div>
+              <div class="qa-block"><span class="q-label">Q3 · Tenders we'd be walking away from</span><h3>"About a third of current pipeline."</h3><p>Realistically, five tenders a month would be declined. That's a third of where we are now. Some of those would have been good fits we just couldn't get to.</p></div>
+              <div class="qa-block"><span class="q-label">Q4 · Confidence in handing over</span><h3>"Industrial in particular has been better than expected."</h3><p>REMC's grasp of containment specs, cable sizing, and switchgear arrangement has been sharper than I expected from a third party. A new in-house hire would have taken months to match it.</p><p>I'd hand over almost any tender now without spot-checking. Healthcare or specialist work I'd still talk through with them first.</p></div>
+              <div class="qa-block"><span class="q-label">Q5 · Accuracy of pricing</span><h3>"Caught an MCB rating error on an industrial bid."</h3><p>One industrial tender had a downstream breaker spec that didn't match the upstream protection — would have been a five-figure under-price at delivery if it had gone out as drafted. REMC flagged it during their take-off review.</p><p>Win rate is the best we've recorded. We're not winning everything — that would mean we're under-pricing — but we're winning the ones we should.</p></div>
+              <div class="qa-block"><span class="q-label">Q6 · Transparency</span><h3>"Margin sits where I choose it."</h3><p>The pricing is broken out by section so I can interrogate any line. Mark-up isn't buried; it's a clear figure I sign off on every tender. When a main contractor pushes back, I know exactly what's in the number and what isn't.</p></div>
+              <div class="qa-block"><span class="q-label">Q7 · Hitting deadlines</span><h3>"100% deadline record."</h3><p>One tender came in tight after an addendum dropped 36 hours before submission. REMC reworked the affected sections and delivered with four hours to spare for my final review. That's the standard I needed.</p></div>
+              <div class="qa-block"><span class="q-label">Q8 · Response time on queries</span><h3>"Two hours in business hours, same evening out of hours."</h3><p>Queries during the day come back inside two hours, almost always with a substantive answer. Late-evening emails when a deadline is live usually get a reply the same night. It feels like working with an in-house team.</p></div>
+              <div class="qa-block"><span class="q-label">Q9 · Onboarding</span><h3>"Four days from contract to first tender priced."</h3><p>We did the kick-off call on a Monday, gave REMC our preferred suppliers and a recent BOQ to model the format, and had a tender being priced by the Thursday. The slowest bit was the one-off setup of our BOQ template — but only had to do it once.</p></div>
+              <div class="qa-block"><span class="q-label">Q10 · What I'd tell another contractor</span><h3>"Don't think of it as outsourcing."</h3><p>Think of it as adding an estimating function without the hiring risk. If you go in expecting a sub-contractor you have to chase, you'll be disappointed. If you treat them as part of your team, share enquiry registers, give them context — you'll wonder how you ran the business before.</p></div>
+              <div class="qa-block full"><span class="q-label">Q11 · What we'd like REMC to do better</span><h3>"A quarterly market view would be valuable."</h3><p>I'd value a quarterly summary of pricing trends across REMC's whole book — which sectors are tightening, where margin has been resilient, where supplier rates have moved. Not project-specific, just intelligence we couldn't get otherwise.</p></div>
+            </div>
+            <div class="pull-quote">It feels like working with an in-house team — without the hiring risk.<span class="author">— Guy Wakefield, Director, G-Tech Electrical</span></div>
+            <div class="project-refs">
+              <h3>Representative project types REMC has priced for G-Tech</h3>
+              <ul>
+                <li><strong>Industrial LV switchgear &amp; distribution</strong> — new-build factory, £500k–£1m</li>
+                <li><strong>Commercial CAT-A fit-out</strong> — multi-floor, phased programme, £250k–£500k</li>
+                <li><strong>Containment &amp; first-fix package</strong> — sub-contract scope on industrial scheme, £100k–£250k</li>
+                <li><strong>Warehouse lighting upgrade</strong> — out-of-hours, occupied site, £50k–£100k</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-card" id="oracle">
+          <summary class="case-summary-row">
+            <img class="case-portrait" alt="Josh Cutler, Commercial Manager of Oracle M&amp;E"
+                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces&auto=format&q=80">
+            <div class="case-identity">
+              <div class="case-company">Oracle M&amp;E</div>
+              <div class="case-attribution"><strong>Josh Cutler</strong> · Commercial Manager</div>
+              <span class="case-meta">Mechanical &amp; electrical · UK-wide</span>
+            </div>
+            <p class="case-teaser">"An electrical estimator without recruiting one."</p>
+            <span class="case-pill">Priority plan</span>
+            <span class="case-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="case-mobile-extras">
+            <span class="case-pill">Priority plan</span>
+            <p class="case-teaser">"An electrical estimator without recruiting one."</p>
+          </div>
+          <div class="case-body">
+            <p class="case-summary-quote">Oracle's mechanical side had estimating capacity; electrical was always the bottleneck. REMC effectively gave them an electrical estimator without recruiting one, removing that constraint on the M&amp;E offer entirely.</p>
+            <div class="qa-grid">
+              <div class="qa-block"><span class="q-label">Q1 · Before REMC</span><h3>"Electrical was the bottleneck."</h3><p>We're a combined M&amp;E business. The mechanical side has internal estimating capacity — has done for years. Electrical fell on the commercial team, mostly on me, alongside the rest of my workload.</p><p>It meant we'd routinely lose M&amp;E packages because we couldn't price the electrical scope in time, or we'd price it conservatively to be safe and get knocked out on cost.</p></div>
+              <div class="qa-block"><span class="q-label">Q2 · Workload returned</span><h3>"Two days a week of commercial time back."</h3><p>I'm spending that time on contract negotiation, supplier framework agreements, post-contract margin work — the stuff that needs a commercial manager, not someone marking up drawings.</p></div>
+              <div class="qa-block"><span class="q-label">Q3 · Tenders we'd be walking away from</span><h3>"4–6 electrical packages a month."</h3><p>The mechanical side wouldn't suffer; electrical would constrain the M&amp;E offer entirely. We'd be declining work the mechanical team could absolutely deliver, just because we couldn't price the spark side.</p></div>
+              <div class="qa-block"><span class="q-label">Q4 · Confidence in handing over</span><h3>"Took longer than the others to fully hand over."</h3><p>M&amp;E coordination is specific — the way electrical containment routes around ductwork, how the BMS scope ties in, who carries what — and REMC needed time to understand how we work between trades. Three months in I was fully confident.</p><p>Electrical-only tenders I don't review at all now. M&amp;E packages I'll still cast an eye over the interface with mechanical scope.</p></div>
+              <div class="qa-block"><span class="q-label">Q5 · Accuracy of pricing</span><h3>"6% below our previous internal estimate."</h3><p>On one healthcare M&amp;E package, REMC's electrical price came in roughly 6% below what we'd have produced internally for similar scope a year earlier. We won that bid, and the price held at delivery.</p><p>That's not REMC under-pricing — that's tighter labour allowances based on cleaner take-off discipline.</p></div>
+              <div class="qa-block"><span class="q-label">Q6 · Transparency</span><h3>"Critical when coordinating with mechanical."</h3><p>Because pricing is fully broken out, I can align REMC's electrical assumptions with our mechanical team's assumptions — who's carrying the supports for combined services, who's pricing the BMS panel power supplies, etc. That visibility avoids double-counting and gaps.</p></div>
+              <div class="qa-block"><span class="q-label">Q7 · Hitting deadlines</span><h3>"Hits dates reliably."</h3><p>The only near-miss was when I sent over a tender late on my side and gave them less than 24 hours. REMC still turned it around. That's not a system you'd want to design around, but it told me what they were capable of when it mattered.</p></div>
+              <div class="qa-block"><span class="q-label">Q8 · Response time on queries</span><h3>"Almost real-time when a tender is live."</h3><p>Inside an hour during the day on standard queries. When we're approaching submission, the comms thread is essentially live — questions get answered within minutes, often by the same estimator who priced it.</p></div>
+              <div class="qa-block"><span class="q-label">Q9 · Onboarding</span><h3>"More upfront work because of the M&amp;E integration."</h3><p>Onboarding took about two weeks of meaningful effort from our side. REMC needed to understand how electrical fits alongside mechanical scope in our submissions, the standard scope splits we use, and our preferred subcontractor list for specialist work.</p><p>The effort paid back. By month two it was running smoothly; by month three I'd stopped reviewing electrical-only tenders.</p></div>
+              <div class="qa-block"><span class="q-label">Q10 · What I'd tell another contractor</span><h3>"Only works if you treat them as part of your team."</h3><p>If you're an M&amp;E business considering this, it only works if you give REMC the same context you'd give an internal estimator. Share your enquiry register, your supplier framework rates, your scope split conventions. The trade-off is transparency in both directions.</p><p>The return on that openness is significant.</p></div>
+              <div class="qa-block full"><span class="q-label">Q11 · What we'd like REMC to do better</span><h3>"Standardise prelims presentation across packages."</h3><p>Minor: the way prelims are laid out varies slightly tender-to-tender depending on which estimator priced it. A house template would tighten that up.</p></div>
+            </div>
+            <div class="pull-quote">REMC effectively gave us an electrical estimator without recruiting one.<span class="author">— Josh Cutler, Commercial Manager, Oracle M&amp;E</span></div>
+            <div class="project-refs">
+              <h3>Representative project types REMC has priced for Oracle M&amp;E</h3>
+              <ul>
+                <li><strong>Healthcare M&amp;E package</strong> — phased works on a live site, £500k–£1m</li>
+                <li><strong>Commercial new-build (electrical scope)</strong> — design-and-build contract, £250k–£500k</li>
+                <li><strong>Education refurbishment (M&amp;E)</strong> — summer programme, £100k–£250k</li>
+                <li><strong>Specialist process electrical</strong> — pharmaceutical sector, £250k–£500k</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <span class="eyebrow" style="background: rgba(255,255,255,0.1); color: white;">Become the next case study</span>
+        <h2>Hand pricing to a team that'll talk about you like this in 12 months.</h2>
+        <p>Twenty minutes on a call. We'll look at your last three tenders and tell you exactly what REMC would do differently — whether you sign with us or not.</p>
+        <div class="ctas">
+          <a href="#" class="btn btn-brand">Book my 20-minute call →</a>
+          <a href="https://wa.me/447822033278" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+            <span class="logo-wordmark">remc</span>
+          </a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="nap">
+            <strong>REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk">LinkedIn →</a>
+          </div>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#plans">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="index.html#contact">Book a call</a></li>
+            <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
+            <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394 · Glasgow, Scotland</div>
+        <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+    (function(){
+      const hash = (location.hash || '').slice(1);
+      if (!hash) return;
+      const target = document.getElementById(hash);
+      if (target && target.tagName.toLowerCase() === 'details') {
+        target.open = true;
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    })();
+  </script>
+</body>
+</html>

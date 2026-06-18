@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store | remc — Templates & tools for UK electrical estimators</title>
+  <meta name="description" content="Downloadable estimating packages for UK start-up contractors and sole traders. Start-Up Pack £150 · Commercial Templates £100. Secure Stripe checkout, instant download, lifetime updates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Calendly assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<!--
+    STRIPE SETUP — before going live:
+    1. In your Stripe Dashboard, create two products: "Start-Up Pack" (£150) and "Commercial Templates" (£100).
+    2. For each product, create a Buy Button (Stripe Dashboard → Payment Links → Buy Button).
+    3. Replace the buy-button-id values below with the IDs from your Stripe Dashboard.
+    4. Replace pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY with your live publishable key.
+    5. Set the success URL on each Buy Button to a thank-you page that delivers the download.
+  -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --brand: #2046F8;
+      --brand-dark: #1837D6;
+      --brand-light: #3D5FF9;
+      --brand-tint: #EEF2F8;
+      --brand-soft: #F4F6FB;
+      --ink: #0a0e27;
+      --body: #374151;
+      --muted: #6B7280;
+      --divider: #E5E7EB;
+      --bg: #FFFFFF;
+      --globe: #C7D2E2; --accent-red: #C8102E;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: clamp(38px, 5vw, 58px); letter-spacing: -0.035em; }
+    h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 12px; letter-spacing: -0.025em; }
+    h3 { font-size: clamp(20px, 2.4vw, 26px); }
+    h4 { font-size: 18px; }
+    p { margin-bottom: 1em; max-width: 64ch; }
+    a { color: var(--ink); text-decoration: none; }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    section { padding: 64px 0; }
+    @media (min-width: 768px) { section { padding: 96px 0; } }
+    .alt-bg { background: var(--brand-soft); }
+
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--brand); margin-bottom: 14px;
+    }
+    .lead { font-size: 18px; color: var(--body); max-width: 62ch; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 22px; font-weight: 600; font-size: 15px;
+      border-radius: 6px; border: none; cursor: pointer;
+      transition: all 0.18s ease; font-family: inherit;
+      text-decoration: none; line-height: 1;
+    }
+    .btn-primary { background: var(--brand); color: white; }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-dark { background: var(--ink); color: white; }
+    .btn-dark:hover { background: #050813; }
+    .btn-ghost {
+      background: transparent; color: var(--ink);
+      border-bottom: 1.5px solid var(--brand);
+      padding: 8px 0; border-radius: 0; font-weight: 600;
+    }
+    .btn-ghost:hover { color: var(--brand); }
+
+    /* LOGO */
+    .logo { display: inline-flex; align-items: center; gap: 2px; text-decoration: none; }
+    .logo-globe { width: 32px; height: 32px; margin-right: -10px; z-index: 1; position: relative; }
+    .logo-wordmark {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 28px; color: var(--brand);
+      letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative;
+    }
+    .logo-globe svg { width: 100%; height: 100%; }
+    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line {
+      fill: none; stroke: var(--globe); stroke-width: 0.7;
+    }
+    footer .logo-wordmark { color: white; }
+    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line {
+      stroke: rgba(255,255,255,0.35);
+    }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid transparent;
+      z-index: 100; transition: border-color 0.2s;
+    }
+    header.scrolled { border-bottom-color: var(--divider); }
+    header::before { content: ''; display: block; height: 3px; background: var(--accent-red); width: 100%; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-links { display: none; gap: 32px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-links a.active { color: var(--brand); font-weight: 600; }
+    .nav .btn-primary { padding: 11px 18px; font-size: 14px; }
+
+    /* HERO */
+    .hero { padding: 64px 0 56px; }
+    .hero-inner { max-width: 880px; }
+    .hero h1 { margin: 0 0 22px; max-width: 16ch; }
+    .hero-subhead {
+      font-size: clamp(17px, 1.3vw, 19px);
+      color: var(--body);
+      margin-bottom: 32px;
+      max-width: 52ch;
+      line-height: 1.55;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .price-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; padding: 7px 14px;
+      background: var(--brand-tint); color: var(--brand);
+      border-radius: 100px; font-weight: 600;
+    }
+
+    .section-header { max-width: 740px; margin-bottom: 48px; }
+    .section-header h2 { margin-bottom: 14px; }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .product-card {
+      background: white;
+      border: 1.5px solid var(--divider);
+      border-radius: 16px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+    }
+    .product-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(32, 70, 248, 0.1);
+    }
+    .product-card.featured {
+      border-color: var(--brand);
+      background: linear-gradient(180deg, var(--brand-tint) 0%, white 30%);
+      position: relative;
+    }
+    .product-card.featured::before {
+      content: 'Best seller';
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+    .product-name {
+      font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--brand); margin-bottom: 8px;
+    }
+    .product-card h3 {
+      font-size: 28px; margin-bottom: 12px;
+      color: var(--ink); letter-spacing: -0.025em;
+    }
+    .product-tagline {
+      font-size: 15px; color: var(--body);
+      margin-bottom: 24px; line-height: 1.55;
+      min-height: 70px;
+    }
+    .product-price {
+      font-size: 48px; font-weight: 700; color: var(--ink);
+      letter-spacing: -0.035em; font-variant-numeric: tabular-nums;
+      line-height: 1; margin-bottom: 4px;
+    }
+    .product-price .per { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+    .product-subprice {
+      font-size: 13px; color: var(--muted);
+      margin-bottom: 24px; padding-bottom: 24px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .product-includes {
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); margin-bottom: 14px;
+    }
+    .product-features {
+      list-style: none; margin: 0 0 28px;
+      padding: 0; flex: 1;
+    }
+    .product-features li {
+      font-size: 14.5px;
+      padding: 7px 0 7px 26px;
+      position: relative;
+      color: var(--body); line-height: 1.5;
+    }
+    .product-features li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 14px;
+      width: 14px; height: 7px;
+      border-left: 2px solid var(--brand);
+      border-bottom: 2px solid var(--brand);
+      transform: rotate(-45deg);
+    }
+    .product-features li strong { color: var(--ink); }
+    .product-checkout {
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+    }
+    .product-meta {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .product-meta .stripe-mark {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-weight: 600; color: var(--ink);
+    }
+
+    /* INCLUDES (what's included with every purchase) */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 768px) { .includes-grid { grid-template-columns: repeat(4, 1fr); } }
+    .include-item {
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+    }
+    .include-icon {
+      width: 36px; height: 36px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .include-icon svg { width: 18px; height: 18px; stroke: var(--brand); stroke-width: 2; fill: none; }
+    .include-item h4 { font-size: 16px; margin-bottom: 6px; color: var(--ink); }
+    .include-item p { font-size: 14px; color: var(--body); margin: 0; }
+
+    /* ACCORDION */
+    .accordion details { border-bottom: 1px solid var(--divider); padding: 6px 0; }
+    .accordion details:first-child { border-top: 1px solid var(--divider); }
+    .accordion summary {
+      list-style: none; cursor: pointer; padding: 18px 0;
+      font-size: 17px; font-weight: 600; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    }
+    .accordion summary::-webkit-details-marker { display: none; }
+    .accordion summary::after {
+      content: '+'; font-size: 22px; font-weight: 400;
+      color: var(--brand); flex-shrink: 0;
+    }
+    .accordion details[open] summary::after { content: '−'; }
+    .accordion-body { padding: 0 0 22px; font-size: 15.5px; line-height: 1.65; max-width: 70ch; color: var(--body); }
+    .accordion-body p { margin-bottom: 10px; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: var(--brand);
+      color: white;
+      text-align: center;
+      padding: 96px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+    }
+    .final-cta > * { position: relative; }
+    .final-cta h2 { color: white; font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,0.88); max-width: 60ch; margin: 0 auto 32px; }
+    .final-cta .btn-white { background: white; color: var(--brand); border: none; font-size: 16px; padding: 18px 32px; }
+    .final-cta .btn-white:hover { background: var(--ink); color: white; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; } }
+    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
+    footer a:hover { color: var(--brand-light); }
+    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand .contact { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; }
+    .footer-brand .contact a { color: rgba(255,255,255,0.85); display: block; }
+    .footer-base {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex; flex-direction: column; gap: 12px;
+      font-size: 12px; color: rgba(255,255,255,0.45);
+    }
+    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/>
+      <ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/>
+      <line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/>
+      <ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+          <span class="logo-wordmark">remc</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="#products" class="btn btn-primary">Browse store</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="eyebrow">REMC Store · Templates &amp; tools</span>
+        <h1>Tools and templates for UK electrical estimators.</h1>
+        <p class="hero-subhead">Downloadable packages built from the system REMC uses on every tender. One-time purchase via secure Stripe checkout. Instant download. Lifetime updates.</p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn btn-primary">Browse the packages →</a>
+          <span class="price-pill">From £100</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Two packages</span>
+        <h2>Pick what fits your work.</h2>
+        <p class="lead">Both are one-time purchases via secure Stripe checkout. No subscription. Files arrive in your inbox the moment payment clears.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- START-UP PACK — £150 -->
+        <article id="startup-pack" class="product-card featured">
+          <div class="product-name">Start-Up Pack</div>
+          <h3>For start-up contractors and sole traders.</h3>
+          <p class="product-tagline">A complete pricing toolkit for electrical contracting businesses pricing their own tenders — the templates, calculator, reference guide, and a worked sample submission to model your work on. Built for directors and sole traders running the commercial side of their business themselves.</p>
+          <div class="product-price">£150 <span class="per">one-time</span></div>
+          <div class="product-subprice">Instant download · Lifetime updates · ex VAT</div>
+
+          <div class="product-includes">What's inside</div>
+          <ul class="product-features">
+            <li><strong>The Contractor's Pricing Guide</strong> — 30+ page PDF, the principles, language, and workflow REMC uses on every tender</li>
+            <li><strong>BOQ Template</strong> — Excel, domestic-focused structure</li>
+            <li><strong>Take-off Mark-up Sheet</strong> — Bluebeam profile + PDF</li>
+            <li><strong>Mark-up &amp; Margin Calculator</strong> — Excel</li>
+            <li><strong>UK Estimating Terms Reference</strong> — PDF, the language of UK contracting</li>
+            <li><strong>47-Point Submission Checklist</strong> — PDF</li>
+            <li><strong>Sample Worked Tender</strong> — PDF, a completed REMC submission to model your own on</li>
+          </ul>
+
+          <div class="product-checkout">
+            <!-- STRIPE BUY BUTTON: Start-Up Pack -->
+            <stripe-buy-button
+              buy-button-id="buy_btn_REPLACE_WITH_YOUR_STARTUP_BUTTON_ID"
+              publishable-key="pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY">
+            </stripe-buy-button>
+            <!-- Fallback if Stripe Buy Button isn't yet configured: -->
+            <noscript>
+              <a href="mailto:enquire@remc.uk?subject=Order:%20Start-Up%20Pack%20%C2%A3150" class="btn btn-primary">Buy now · £150</a>
+            </noscript>
+          </div>
+          <p class="product-meta">
+            <span class="stripe-mark">Secure checkout via Stripe</span> · Card · Apple Pay · Google Pay
+          </p>
+        </article>
+
+        <!-- COMMERCIAL TEMPLATES — £100 -->
+        <article class="product-card">
+          <div class="product-name">Commercial Templates</div>
+          <h3>For contractors moving into commercial work.</h3>
+          <p class="product-tagline">Sector-specific templates for office fit-outs, multi-package commercial schemes, and complex tender qualifications. Drop-in templates from REMC's commercial estimating system.</p>
+          <div class="product-price">£100 <span class="per">one-time</span></div>
+          <div class="product-subprice">Instant download · Lifetime updates · ex VAT</div>
+
+          <div class="product-includes">What's inside</div>
+          <ul class="product-features">
+            <li><strong>Commercial BOQ Template</strong> — Excel, multi-package structure</li>
+            <li><strong>Commercial Fit-Out Tender Template</strong> — Word</li>
+            <li><strong>Qualifications Library — Commercial Edition</strong> — 30+ tested clauses</li>
+            <li><strong>Multi-Package Pricing Template</strong> — Excel</li>
+            <li><strong>Commercial Supplier Matrix</strong> — Excel</li>
+            <li><strong>Commercial Project Programme</strong> — Excel Gantt</li>
+          </ul>
+
+          <div class="product-checkout">
+            <!-- STRIPE BUY BUTTON: Commercial Templates -->
+            <stripe-buy-button
+              buy-button-id="buy_btn_REPLACE_WITH_YOUR_COMMERCIAL_BUTTON_ID"
+              publishable-key="pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY">
+            </stripe-buy-button>
+            <noscript>
+              <a href="mailto:enquire@remc.uk?subject=Order:%20Commercial%20Templates%20%C2%A3100" class="btn btn-primary">Buy now · £100</a>
+            </noscript>
+          </div>
+          <p class="product-meta">
+            <span class="stripe-mark">Secure checkout via Stripe</span> · Card · Apple Pay · Google Pay
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET WITH EVERY PURCHASE -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Every purchase includes</span>
+        <h2>The same standards as our retainer clients.</h2>
+      </div>
+      <div class="includes-grid">
+        <div class="include-item">
+          <div class="include-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </div>
+          <h4>Instant download</h4>
+          <p>Files emailed within sixty seconds of payment. Cloud backup link included.</p>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-9-9c2.5 0 4.8 1 6.5 2.7M21 4v6h-6"/></svg>
+          </div>
+          <h4>Lifetime updates</h4>
+          <p>Every quarter we refresh templates, clauses, and calculators. Buyers get them free, forever.</p>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">
+            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h4>Editable formats</h4>
+          <p>Excel, Word, Bluebeam, PDF. No protected cells, no locked content. Yours to rebrand.</p>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5M3 8v10l9 5 9-5V8M3 8l9 5 9-5"/></svg>
+          </div>
+          <h4>Single-business licence</h4>
+          <p>Use across your whole team and every job. No reselling, no sharing externally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Frequently asked</span>
+        <h2>Buying questions, answered.</h2>
+      </div>
+      <div class="accordion" style="max-width: 900px;">
+        <details>
+          <summary>How do I receive my package?</summary>
+          <div class="accordion-body"><p>Instantly. Your download link is emailed to the address you check out with, within sixty seconds of payment. A permanent cloud-backup link is included so you can re-download any time — useful if you lose the files or change machines.</p></div>
+        </details>
+        <details>
+          <summary>What file formats are included?</summary>
+          <div class="accordion-body"><p>Microsoft Excel (.xlsx) for spreadsheets and calculators, Microsoft Word (.docx) for templates and clauses, PDF for printable references and checklists, and a Bluebeam Revu profile (.bpx) for the take-off workflow. Everything is editable.</p></div>
+        </details>
+        <details>
+          <summary>What does the Start-Up Pack cover that Commercial Templates doesn't?</summary>
+          <div class="accordion-body"><p>The Start-Up Pack is broader. It includes the full Contractor's Pricing Guide, a UK estimating terms reference, a worked sample tender, and all the foundational templates a start-up contractor or sole trader needs to run their own pricing function from day one. Commercial Templates is narrower and built for contractors who already have a pricing process in place — it adds the sector-specific commercial templates and clauses for office fit-outs, multi-package schemes, and complex tenders.</p></div>
+        </details>
+        <details>
+          <summary>Can I buy both packages?</summary>
+          <div class="accordion-body"><p>Yes — many start-up contractors and sole traders do exactly that, picking up the Commercial Templates alongside the Start-Up Pack so they're equipped for commercial work from day one. Check out for them separately; the templates don't overlap.</p></div>
+        </details>
+        <details>
+          <summary>Does the price include VAT?</summary>
+          <div class="accordion-body"><p>Prices shown are ex VAT. UK business customers can submit a VAT number at checkout to apply zero-rating where applicable; consumers and non-VAT-registered customers pay the listed price.</p></div>
+        </details>
+        <details>
+          <summary>Is the payment secure?</summary>
+          <div class="accordion-body"><p>Yes. Payments are processed by Stripe, the same payment infrastructure used by companies like Shopify, Amazon, and Slack. Card details never touch REMC's systems. Visa, Mastercard, Amex, Apple Pay, and Google Pay are all supported.</p></div>
+        </details>
+        <details>
+          <summary>What's your refund policy?</summary>
+          <div class="accordion-body"><p>Because these are digital downloads delivered immediately, we don't offer refunds once the files have been opened. If you have a question before buying, email <a href="mailto:enquire@remc.uk">enquire@remc.uk</a> and we'll help you pick the right package.</p></div>
+        </details>
+        <details>
+          <summary>Can I share the package with my team?</summary>
+          <div class="accordion-body"><p>Yes — single-business licence. Use within your firm across your team and your jobs. The only thing not permitted is reselling, redistributing, or sharing externally with other firms.</p></div>
+        </details>
+        <details>
+          <summary>Do I get free updates?</summary>
+          <div class="accordion-body"><p>Yes. We refresh the packages every quarter — new clauses, calculator improvements, supplier list updates, template tweaks. Every buyer receives the updates by email, automatically, free, for life.</p></div>
+        </details>
+        <details>
+          <summary>I'm thinking about a Monthly Service Plan instead — should I still buy a package?</summary>
+          <div class="accordion-body"><p>If you're moving to a Monthly Service Plan, you don't need the packages — your REMC estimator uses these templates on your tenders for you. The packages are for contractors who price in-house.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Need more than templates?</h2>
+      <p>If you'd rather REMC priced your tenders for you, our Monthly Service Plans deliver the same system applied to your live work — every tender, every month.</p>
+      <a href="index.html#plans" class="btn btn-white">See the Monthly Service Plans →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+            <span class="logo-wordmark">remc</span>
+          </a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="footer-nap" style="margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7);">
+            <strong style="color: white; display: block; margin-bottom: 4px;">REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk" style="color: rgba(255,255,255,0.85); display: block; margin-top: 8px;">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278" style="color: rgba(255,255,255,0.85); display: block;">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk" style="color: rgba(255,255,255,0.85); display: block;">LinkedIn →</a>
+          </div>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#plans">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="index.html#contact">Book a call</a></li>
+            <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
+            <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394 · Glasgow, Scotland</div>
+        <div class="links">
+          <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+  
+    /* CALENDLY — intercept call & discuss CTAs sitewide */
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

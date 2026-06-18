@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Price Your First Electrical Tender (UK Step-by-Step Guide, 2026) | remc</title>
+  <meta name="description" content="Pricing your first electrical tender? Here's the 9-step workflow we use on every REMC submission — from take-off to qualified bid.">
+  <link rel="canonical" href="https://remc.uk/blog/how-to-price-your-first-electrical-tender/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Calendly assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Price Your First Electrical Tender (UK)",
+    "description": "9-step workflow for pricing a UK electrical tender, from triaging the documents to applying mark-up.",
+    "totalTime": "PT8H",
+    "step": [
+      {"@type": "HowToStep", "name": "Triage the documents", "text": "Read everything before you price anything. Note submission date, contract form, drawings status, works scope, subcontract packages, risk clauses."},
+      {"@type": "HowToStep", "name": "Mark up the drawings", "text": "Use Bluebeam Revu with coloured markers per component type. Audit-trail every page. Allocate 30-50% of your tender time here."},
+      {"@type": "HowToStep", "name": "Build the bill of quantities", "text": "Structure your BOQ in 10 sections matching the installation sequence: containment, first-fix, second-fix, distribution, fire alarm, data, specialist, testing, prelims."},
+      {"@type": "HowToStep", "name": "Send subcontractor enquiries", "text": "Email all subs simultaneously with the same scope and a deadline 48 hours before your submission. Never use placeholder rates."},
+      {"@type": "HowToStep", "name": "Send material enquiries", "text": "Email preferred merchants with take-off quantities. Compare prices. Use the lowest credible quote."},
+      {"@type": "HowToStep", "name": "Apply labour", "text": "Use published CIJC rates adjusted for your firm's productivity. Hours-per-item is more defensible than hours-per-section."},
+      {"@type": "HowToStep", "name": "Add plant, prelims, overheads", "text": "Itemise plant and prelims. Apply your firm's overhead recovery percentage (typically 12-18%) to direct cost."},
+      {"@type": "HowToStep", "name": "Draft qualifications", "text": "Add clauses limiting risk: access assumptions, design-change pricing, pay-when-paid exclusion, programme penalty exclusion."},
+      {"@type": "HowToStep", "name": "Apply mark-up and submit", "text": "Apply a single consistent mark-up across direct costs: 12-18% domestic, 14-20% commercial, 16-25% industrial. Submit 48 hours early."}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do you price an electrical tender step by step?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nine steps: triage documents, take off the drawings, build the BOQ, send sub enquiries, send material enquiries, apply labour, add plant and prelims, draft qualifications, apply mark-up and submit." }},
+      { "@type": "Question", "name": "How long does it take to price an electrical tender?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A typical mid-size UK commercial tender (£100k-£500k) takes 8-14 hours to price properly. Smaller domestic jobs (£20k-£50k) take 3-5 hours." }}
+    ]
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --brand: #2046F8; --brand-dark: #1837D6; --brand-light: #3D5FF9; --brand-tint: #EEF2F8; --brand-soft: #F4F6FB; --ink: #0a0e27; --body: #374151; --muted: #6B7280; --divider: #E5E7EB; --bg: #FFFFFF; --globe: #C7D2E2; --accent-red: #C8102E; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--body); background: var(--bg); line-height: 1.7; font-size: 18px; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--ink); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(36px, 5vw, 52px); letter-spacing: -0.035em; line-height: 1.1; }
+    h2 { font-size: clamp(24px, 3vw, 32px); margin: 56px 0 16px; letter-spacing: -0.025em; }
+    h3 { font-size: clamp(20px, 2.2vw, 22px); margin: 36px 0 12px; }
+    .article-body p { margin-bottom: 1.3em; max-width: none; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body a { color: var(--brand); border-bottom: 1px solid var(--brand); padding-bottom: 1px; }
+    .article-body ul, .article-body ol { margin: 1.3em 0 1.3em 24px; }
+    .article-body li { margin-bottom: 0.6em; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    section { padding: 64px 0; }
+    .article-container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .article-container { padding: 0 40px; } }
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand); margin-bottom: 14px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-weight: 600; font-size: 15px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.18s ease; font-family: inherit; text-decoration: none; line-height: 1; }
+    .btn-primary { background: var(--brand); color: white; }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); color: white; border-bottom: none; }
+    .btn-light { background: white; color: var(--brand); border: 1.5px solid var(--brand); }
+    .btn-light:hover { background: var(--brand); color: white; }
+    .btn-dark { background: var(--ink); color: white; }
+    .logo { display: inline-flex; align-items: center; gap: 2px; text-decoration: none; }
+    .logo-globe { width: 32px; height: 32px; margin-right: -10px; z-index: 1; position: relative; }
+    .logo-wordmark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; color: var(--brand); letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative; }
+    .logo-globe svg { width: 100%; height: 100%; }
+    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line { fill: none; stroke: var(--globe); stroke-width: 0.7; }
+    footer .logo-wordmark { color: white; }
+    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line { stroke: rgba(255,255,255,0.35); }
+    header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(10px); -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid transparent; z-index: 100; transition: border-color 0.2s; }
+    header.scrolled { border-bottom-color: var(--divider); }
+    header::before { content: ''; display: block; height: 3px; background: var(--accent-red); width: 100%; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-links { display: none; gap: 32px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-links a.active { color: var(--brand); font-weight: 600; }
+    .nav .btn-primary { padding: 11px 18px; font-size: 14px; }
+    .article-header { padding: 48px 0 32px; background: var(--brand-soft); border-bottom: 1px solid var(--divider); }
+    .article-header h1 { margin: 16px 0 24px; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--muted); border-bottom: 1px dotted var(--muted); }
+    .article-meta-top { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); align-items: center; margin-top: 8px; }
+    .author-pill { display: inline-flex; align-items: center; gap: 8px; }
+    .author-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-tint); color: var(--brand); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; }
+    .article-body { padding: 56px 0; }
+    .pull-quote { border-left: 4px solid var(--brand); padding: 16px 24px; margin: 32px 0; background: var(--brand-soft); border-radius: 0 8px 8px 0; font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1.5; }
+    .step-block { background: white; border: 1.5px solid var(--divider); border-radius: 12px; padding: 28px 32px; margin: 24px 0; position: relative; }
+    .step-block .step-num { position: absolute; top: -16px; left: 24px; background: var(--brand); color: white; padding: 4px 14px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; font-variant-numeric: tabular-nums; }
+    .step-block h3 { margin: 6px 0 12px; font-size: 22px; }
+    .step-block p { margin-bottom: 12px; }
+    .step-block ul li { margin-bottom: 4px; }
+    .step-block:last-child { margin-bottom: 0; }
+    .stat-callout { background: var(--ink); color: white; padding: 32px; border-radius: 12px; margin: 40px 0; text-align: center; }
+    .stat-callout .num { font-size: clamp(48px, 6vw, 72px); font-weight: 700; color: var(--brand-light); letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .stat-callout p { color: rgba(255,255,255,0.75); margin: 8px 0 0; }
+    .inline-cta { background: var(--brand-tint); border: 1px solid rgba(32,70,248,0.2); border-radius: 12px; padding: 28px 32px; margin: 40px 0; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .inline-cta-text { flex: 1; min-width: 240px; }
+    .inline-cta-text strong { color: var(--ink); display: block; font-size: 17px; margin-bottom: 4px; }
+    .inline-cta-text p { font-size: 14px; color: var(--body); margin: 0; }
+    .faq { background: var(--brand-soft); padding: 64px 0; margin-top: 48px; border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
+    .faq-list { max-width: 740px; margin: 32px auto 0; }
+    .faq-list details { border-bottom: 1px solid var(--divider); }
+    .faq-list summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; font-size: 22px; color: var(--brand); flex-shrink: 0; }
+    .faq-list details[open] summary::after { content: '−'; }
+    .faq-list .answer { padding: 0 0 24px; font-size: 16px; line-height: 1.7; color: var(--body); }
+    /* Email-gated lead magnet */
+    .lead-magnet { background: var(--brand-soft, #F7F9FE); border: 1px solid var(--brand-light, #4d6dfb); border-radius: 16px; padding: 32px 28px; margin: 40px 0; }
+    .lead-magnet .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); background: white; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
+    .lead-magnet h3 { font-size: 22px; margin: 0 0 8px; color: var(--ink); }
+    .lead-magnet > p { margin: 0 0 18px; color: var(--body); font-size: 15px; line-height: 1.55; }
+    .lead-magnet form { display: flex; gap: 8px; flex-wrap: wrap; }
+    .lead-magnet input[type="email"] { flex: 1; min-width: 220px; padding: 14px 16px; font-size: 15px; font-family: inherit; border: 1px solid var(--divider, #E5E7EB); border-radius: 10px; background: white; color: var(--ink); outline: none; transition: border-color 0.15s; }
+    .lead-magnet input[type="email"]:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(33,71,249,0.12); }
+    .lead-magnet button { padding: 14px 22px; font-size: 14px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; background: var(--brand); color: white; font-family: inherit; transition: background 0.2s; }
+    .lead-magnet button:hover { background: var(--brand-dark, #1837D6); }
+    .lead-magnet .small { font-size: 12px; color: var(--muted, #9CA3AF); margin: 10px 0 0; }
+    .lead-magnet .success { display: none; padding: 18px 20px; border-radius: 10px; background: white; border: 1px solid var(--brand); color: var(--ink); font-size: 15px; line-height: 1.55; }
+    .lead-magnet .success strong { display: block; margin-bottom: 6px; }
+    .lead-magnet .success a { color: var(--brand); font-weight: 600; text-decoration: underline; }
+    .lead-magnet.is-submitted form, .lead-magnet.is-submitted .small { display: none; }
+    .lead-magnet.is-submitted .success { display: block; }
+
+    .next-step { background: var(--brand); color: white; padding: 80px 24px; text-align: center; }
+    .next-step h2 { color: white; margin-top: 0; }
+    .next-step p { color: rgba(255,255,255,0.88); max-width: 56ch; margin: 0 auto 24px; }
+    .next-step .btn-white { background: white; color: var(--brand); border: none; padding: 16px 28px; }
+    .next-step .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .next-step .btn-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.5); padding: 16px 28px; }
+    .related { padding: 64px 0; }
+    .related-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 768px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+    .related-card { background: white; border: 1px solid var(--divider); border-radius: 12px; padding: 24px; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .related-card .article-category { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand); font-size: 11px; margin-bottom: 8px; display: block; }
+    .related-card h4 { font-size: 18px; margin-bottom: 8px; }
+    .related-card p { font-size: 14px; margin: 0 0 12px; color: var(--body); }
+    .related-card a { font-size: 13px; font-weight: 600; color: var(--brand); border-bottom: none; }
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; } }
+    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
+    footer ul { list-style: none; } footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
+    footer a:hover { color: var(--brand-light); }
+    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand .contact { margin-top: 18px; font-size: 13px; line-height: 1.8; }
+    .footer-brand .contact a { color: rgba(255,255,255,0.85); display: block; }
+    .footer-base { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
+    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/><ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/><line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/><ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+          <span class="logo-wordmark">remc</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-header">
+    <div class="article-container">
+      <div class="breadcrumb"><a href="index.html">remc</a> &nbsp;›&nbsp; <a href="blog.html">Blog</a> &nbsp;›&nbsp; First Tender Guide</div>
+      <span class="eyebrow">How-to · 14 min read</span>
+      <h1>How to Price Your First Electrical Tender: A UK Estimator's Step-by-Step Guide</h1>
+      <div class="article-meta-top">
+        <span class="author-pill"><span class="author-avatar">R</span><span>REMC</span></span>
+        <span>·</span>
+        <span>Published May 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="article-container">
+
+      <p class="pull-quote">Your first tender is going to be terrifying. You'll over-think every line, second-guess the mark-up, and click submit at 11:58pm convinced you've made a six-figure mistake.</p>
+
+      <p>I've been there. Everyone who prices electrical work for a living has been there. The good news: there's a workflow that takes the panic out of it. Nine steps. Same nine steps we use at REMC on every tender we price — from £20k retail fit-outs to £780k industrial schemes.</p>
+
+      <p>Here's the version for a first-timer.</p>
+
+      <div class="step-block">
+        <span class="step-num">Step 01</span>
+        <h3>Triage the documents</h3>
+        <p>Before you price anything, read everything.</p>
+        <p>Tender packs land in a confused state. Drawings, specifications, BOQ skeletons, employer requirements, the main contractor's pre-construction information, programme constraints, qualifications, addendums. The first job is to know what you're working with.</p>
+        <p>What to look for in your first read:</p>
+        <ul>
+          <li><strong>Submission date and time.</strong> Diary it. Set an internal deadline 48 hours earlier.</li>
+          <li><strong>Form of contract.</strong> JCT, NEC, bespoke? This matters for risk allocation.</li>
+          <li><strong>Drawings list and revision status.</strong> Are the drawings current?</li>
+          <li><strong>The works description.</strong> What's included, what isn't.</li>
+          <li><strong>Subcontract packages identified.</strong> What's expected to be subbed out.</li>
+          <li><strong>Risk clauses.</strong> Anything that shifts risk onto you (more on this in Step 8).</li>
+        </ul>
+        <p>Allocate one hour for this. If the tender pack is heavy, two. Resist the urge to start pricing in this step.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 02</span>
+        <h3>Mark up the drawings (the take-off)</h3>
+        <p>This is where the real work starts. You're translating drawings into a measured schedule of every electrical component on the job: socket outlets, light fittings, switches, distribution boards, cable runs, containment, fire alarm devices.</p>
+        <p>Most UK estimators use Bluebeam Revu for take-offs. You set up a marker for each component type, click through the drawings counting and measuring, and Bluebeam tallies it up for you.</p>
+        <p>Two tips for your first one:</p>
+        <ul>
+          <li><strong>Use coloured markers.</strong> Lights in yellow, sockets in blue, data points in red, fire alarm in pink. You'll spot mistakes faster.</li>
+          <li><strong>Audit-trail every page.</strong> When you've counted a drawing, stamp it "counted" with the date. You'd be amazed how easy it is to count the same drawing twice.</li>
+        </ul>
+        <p>Allocate 30–50% of your total tender time to the take-off. It's the foundation everything else sits on.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 03</span>
+        <h3>Build the bill of quantities (BOQ)</h3>
+        <p>The BOQ converts the take-off into priced lines. Materials × quantity × rate = total. Labour hours × labour rate = total. Plant and prelims similar.</p>
+        <p>For your first one, structure your BOQ in sections that match the way the work will be installed:</p>
+        <ol>
+          <li>First-fix containment</li>
+          <li>First-fix wiring</li>
+          <li>Second-fix lighting</li>
+          <li>Second-fix small power</li>
+          <li>Distribution and circuit protection</li>
+          <li>Fire alarm and life safety</li>
+          <li>Data and communications</li>
+          <li>Specialist systems (BMS, access control, etc.)</li>
+          <li>Testing and commissioning</li>
+          <li>Preliminaries</li>
+        </ol>
+        <p>Each section has materials and labour priced separately. Mark-up is applied at the end (Step 9), not line by line.</p>
+      </div>
+
+      <div class="inline-cta">
+        <div class="inline-cta-text">
+          <strong>Want this BOQ structure as a ready-to-use Excel template?</strong>
+          <p>The Start-Up Pack includes the exact BOQ template REMC uses on every tender. Plus take-off mark-up sheet, calculator, glossary, worked sample. £150 one-time.</p>
+        </div>
+        <a href="store.html" class="btn btn-primary">Get the pack →</a>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 04</span>
+        <h3>Send subcontractor enquiries</h3>
+        <p>Anything you're not self-delivering, you need a price from a sub. Typical sub-packages on a commercial electrical tender:</p>
+        <ul>
+          <li>Fire alarm install and certification</li>
+          <li>Data cabling certification</li>
+          <li>BMS / controls commissioning</li>
+          <li>Specialist systems (CCTV, access)</li>
+          <li>Test and inspection (if a third party)</li>
+        </ul>
+        <p>Email each sub at the same time, with the same scope, the same drawings, the same date for a returned quote. Set the deadline 48 hours before your submission so you have time to query, compare, and integrate.</p>
+        <p>Two non-negotiables: <strong>never use a placeholder rate "to fill the slot",</strong> and <strong>never submit with only one sub quote on a critical package.</strong> Two quotes minimum on anything over £20k.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 05</span>
+        <h3>Send material enquiries</h3>
+        <p>Same principle for material-heavy items. Distribution boards, switchgear, specialist luminaires, cable in volume.</p>
+        <p>Email your preferred merchants with the take-off quantities. Compare prices. Use the lowest credible price — credibility matters because the cheapest quote sometimes can't deliver on the programme.</p>
+        <p>For your first tender, expect to spend 30–60 minutes chasing material quotes. After ten tenders, you'll have a small group of trusted merchants who quote back inside 24 hours.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 06</span>
+        <h3>Apply labour</h3>
+        <p>This is where most first-time estimators go wrong, and where experience compounds.</p>
+        <p>You're estimating how many hours each section will take to install. The temptation is to estimate by gut. Don't. Use published rates from <a href="https://www.thejib.org.uk" target="_blank" rel="noopener">CIJC (Construction Industry Joint Council)</a> and <a href="https://www.select.org.uk" target="_blank" rel="noopener">SELECT</a> (in Scotland), adjusted for your firm's known productivity.</p>
+        <p>Two methods:</p>
+        <ul>
+          <li><strong>Hours per item.</strong> Each second-fix socket: 0.4 hours including testing. Each light point: 0.6 hours. Etc.</li>
+          <li><strong>Hours per section.</strong> Total labour for second-fix lighting on a 24-unit housing scheme: 320 hours.</li>
+        </ul>
+        <p>Hours per item is more granular and easier to defend in a value-engineering session. Hours per section is faster.</p>
+        <p>Multiply by your labour day rate (typical UK 2026: £280–£340/day depending on region and JIB grade). Add appropriate non-productive overhead.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 07</span>
+        <h3>Add plant, prelims, and overheads</h3>
+        <p><strong>Plant:</strong> scaffolding, MEWPs, hire of test gear if not in stock. Itemise it.</p>
+        <p><strong>Preliminaries:</strong> see the <a href="blog-margin-leaks.html">margin leaks article</a> — itemise rather than apply a percentage. Site supervisor time, parking, welfare contribution, programme contingency.</p>
+        <p><strong>Overheads:</strong> your firm's overhead recovery percentage applied to direct cost. If you don't know it, calculate it: total annual overhead ÷ total annual direct cost. Most UK electrical contractors run 12–18%.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 08</span>
+        <h3>Draft qualifications</h3>
+        <p>This is the most often-skipped step on first tenders, and the one that protects you the most.</p>
+        <p>A qualification is a clause you add to your tender that limits the risk you're taking on. Examples:</p>
+        <ul>
+          <li>"Our price assumes uninterrupted access between [date] and [date]."</li>
+          <li>"Variations to the design after acceptance to be priced and agreed before instruction."</li>
+          <li>"Pay-when-paid clauses in the main contract are excluded from our agreement."</li>
+          <li>"Programme penalties are excluded; our price assumes [duration] from acceptance."</li>
+        </ul>
+        <p>Build a standing qualifications library so you're not rewriting them every tender. The Commercial Templates pack includes a 30-clause library tested on hundreds of submissions — a quick way to skip the learning curve here.</p>
+      </div>
+
+      <div class="step-block">
+        <span class="step-num">Step 09</span>
+        <h3>Apply mark-up and submit</h3>
+        <p>Finally, mark-up. This is your profit and your risk premium combined.</p>
+        <p>For your first tender, <strong>apply mark-up consistently across the whole submission</strong>. Don't mark up materials at 12% and labour at 18% — pick one rate and apply it across direct costs.</p>
+        <p>Typical mark-up ranges in 2026 UK electrical contracting:</p>
+        <ul>
+          <li>Domestic / residential: 12–18%</li>
+          <li>Commercial fit-out: 14–20%</li>
+          <li>Industrial / specialist: 16–25%</li>
+          <li>Healthcare / education / public sector: 14–18% (often heavily competed)</li>
+        </ul>
+        <p>Submit by your internal deadline (48 hours before the actual deadline). Use the buffer to re-check the maths and the qualifications.</p>
+      </div>
+
+      <div class="stat-callout">
+        <div class="num">9 steps</div>
+        <p>Your first tender will take ~14 hours. Your tenth will take ~6. By tender fifty you're a competent estimator.</p>
+      </div>
+
+      <div class="lead-magnet" id="estimating-guide">
+        <span class="tag">Free download</span>
+        <h3>The REMC Estimating Guide.</h3>
+        <p>A free 30-page reference that goes deeper than this article — the language, principles, and full pricing workflow REMC uses on every tender. Emailed to your inbox the moment you sign up.</p>
+        <form id="lead-magnet-form" novalidate>
+          <input type="email" name="email" placeholder="you@yourcompany.co.uk" required autocomplete="email" aria-label="Email address">
+          <button type="submit">Email me the guide →</button>
+        </form>
+        <p class="small">Joins you to the REMC mailing list (1–2 emails/month, unsubscribe anytime). For the paid templates, calculator, and worked sample tender, see the <a href="store.html#startup-pack" style="color: var(--brand); font-weight: 600;">Start-Up Pack — £150</a>.</p>
+        <div class="success" role="status" aria-live="polite">
+          <strong>You're on the list.</strong>
+          The guide will land in your inbox shortly. <a href="REMC-Estimating-Guide.pdf" download target="_blank" rel="noopener">Download it directly →</a>
+        </div>
+      </div>
+
+      <h2>What your first tender will teach you</h2>
+      <p>You'll get something wrong. Probably labour hours. Possibly a missed material. Maybe a qualification you should have added.</p>
+      <p>That's fine. Document what went wrong, update your templates, and your second tender will be 30% faster and tighter than your first. Your tenth will be 70% faster. By the time you've priced fifty, you're a competent estimator.</p>
+
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="article-container">
+      <span class="eyebrow">Frequently asked</span>
+      <h2 style="margin: 8px 0 0;">FAQ</h2>
+      <div class="faq-list">
+        <details><summary>How do you price an electrical tender step by step?</summary><div class="answer">Nine steps: triage documents, take off the drawings, build the BOQ, send sub enquiries, send material enquiries, apply labour, add plant and prelims, draft qualifications, apply mark-up and submit. Allocate 30–50% of your time to the take-off.</div></details>
+        <details><summary>How long does it take to price an electrical tender?</summary><div class="answer">A typical mid-size UK commercial tender (£100k–£500k) takes 8–14 hours to price properly. Smaller domestic jobs (£20k–£50k) take 3–5 hours. Industrial or specialist work can take 20+ hours.</div></details>
+        <details><summary>What's the typical mark-up on an electrical tender in the UK?</summary><div class="answer">Domestic 12–18%, commercial fit-out 14–20%, industrial 16–25%, public-sector and healthcare 14–18%. Add risk premium for unfamiliar sectors.</div></details>
+        <details><summary>What software is needed to price an electrical tender?</summary><div class="answer">Bluebeam Revu for take-offs, Microsoft Excel for the BOQ (or specialist software like Trimble Accubid, Cubit, or FastEST), Microsoft Word for the submission cover and qualifications. The <a href="store.html#startup-pack">Start-Up Pack</a> from REMC includes ready-to-use templates for all three.</div></details>
+        <details><summary>Can a start-up contractor price a commercial electrical tender themselves?</summary><div class="answer">Yes — with the right templates and a structured workflow. The first few will take twice as long as they need to. By the tenth, you'll be operating efficiently. The <a href="store.html#startup-pack">Start-Up Pack (£150)</a> and a worked sample tender will halve the learning curve. Pair it with the Commercial Templates pack if your work is mostly commercial fit-outs.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-step">
+    <div class="container">
+      <h2>Skip the learning curve.</h2>
+      <p>The Start-Up Pack gives you the exact templates we use at REMC — BOQ structure, take-off mark-up sheet, calculator, qualifications library, and a worked sample tender to reference. Or have REMC price it for you.</p>
+      <div class="ctas">
+        <a href="store.html#startup-pack" class="btn btn-white">Get the Start-Up Pack — £150 →</a>
+        <a href="#estimating-guide" class="btn btn-outline">Or get the free guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="article-container">
+      <h3 style="margin-bottom: 24px;">Read next</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <span class="article-category">Diagnosis</span>
+          <h4>Why You're Losing Electrical Tenders by 0.5%</h4>
+          <p>The 6 margin leaks costing UK contractors winnable jobs — and how to fix each.</p>
+          <a href="blog-margin-leaks.html">Read article →</a>
+        </div>
+        <div class="related-card">
+          <span class="article-category">Decision</span>
+          <h4>In-House vs Outsourced Electrical Estimator</h4>
+          <p>True 2026 UK loaded cost of an in-house estimator hire, vs an outsourced plan.</p>
+          <a href="blog-outsourced-cost.html">Read article →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+            <span class="logo-wordmark">remc</span>
+          </a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="footer-nap" style="margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7);">
+            <strong style="color: white; display: block; margin-bottom: 4px;">REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk" style="color: rgba(255,255,255,0.85); display: block; margin-top: 8px;">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278" style="color: rgba(255,255,255,0.85); display: block;">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk" style="color: rgba(255,255,255,0.85); display: block;">LinkedIn →</a>
+          </div>
+        </div>
+        <div><h4>Blog</h4><ul>
+          <li><a href="blog-outsourced-cost.html">In-House vs Outsourced</a></li>
+          <li><a href="blog-margin-leaks.html">Tender Margin Leaks</a></li>
+          <li><a href="blog-first-tender-guide.html">Price Your First Tender</a></li>
+        </ul></div>
+                <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#plans">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="index.html#contact">Book a call</a></li>
+            <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
+            <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394</div>
+        <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+  
+    /* CALENDLY — intercept call & discuss CTAs sitewide */
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+
+    // Email-gated download for the Estimating Guide
+    (function(){
+      const box = document.getElementById('estimating-guide');
+      const form = document.getElementById('lead-magnet-form');
+      if (!form || !box) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const input = form.querySelector('input[type=email]');
+        const email = (input.value || '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          input.style.borderColor = '#E24B4A';
+          input.focus();
+          return;
+        }
+        // TODO: wire to mailing-list endpoint (Mailchimp, ConvertKit, Mailerlite, etc.)
+        // For now we capture the email locally and reveal the download link.
+        try {
+          const list = JSON.parse(localStorage.getItem('remc_mailing_list') || '[]');
+          if (list.indexOf(email) === -1) list.push(email);
+          localStorage.setItem('remc_mailing_list', JSON.stringify(list));
+        } catch(_) {}
+        box.classList.add('is-submitted');
+      });
+    })();
+
+  </script>
+</body>
+</html>
