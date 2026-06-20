@@ -13,98 +13,8 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+  <link rel="stylesheet" href="styles.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --brand: #2147f9; --brand-dark: #1837D6; --brand-light: #4d6dfb;
-      --brand-tint: #EEF2F8; --brand-soft: #F7F9FE;
-      --ink: #0a0e27; --line: #111114;
-      --body: #4B5563; --muted: #9CA3AF;
-      --divider: #E5E7EB; --divider-soft: #F0F2F5;
-      --bg: #FFFFFF; --globe: #C7D2E2; --accent-red: #C8102E;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: var(--body); background: var(--bg); line-height: 1.55; font-size: 17px;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-    body::before { content: ''; display: block; height: 3px; background: var(--accent-red); }
-
-    h1, h2, h3, h4 {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-      color: var(--ink); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em;
-    }
-    h1 { font-size: clamp(40px, 7vw, 88px); font-weight: 800; letter-spacing: -0.045em; }
-    h2 { font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.04em; }
-    h3 { font-size: clamp(20px, 2.4vw, 26px); letter-spacing: -0.025em; }
-    p { margin: 0; }
-    a { color: var(--ink); text-decoration: none; }
-
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-    @media (min-width: 768px) { .container { padding: 0 40px; } }
-    section { padding: 80px 0; }
-    @media (min-width: 768px) { section { padding: 120px 0; } }
-
-    .eyebrow {
-      display: inline-block; font-size: 12px; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.18em;
-      color: var(--brand); padding: 6px 12px;
-      background: var(--brand-tint); border-radius: 100px;
-      margin-bottom: 20px;
-    }
-    .lead { font-size: clamp(18px, 1.7vw, 22px); color: var(--body); line-height: 1.55; max-width: 60ch; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 16px 26px; font-weight: 600; font-size: 15px;
-      border-radius: 12px; border: none; cursor: pointer;
-      transition: all 0.2s ease; font-family: inherit;
-      text-decoration: none; line-height: 1;
-    }
-    .btn-primary { background: var(--ink); color: white; }
-    .btn-primary:hover { background: #050813; transform: translateY(-1px); }
-    .btn-brand { background: var(--brand); color: white; }
-    .btn-brand:hover { background: var(--brand-dark); transform: translateY(-1px); }
-    .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--divider); }
-    .btn-ghost:hover { border-color: var(--ink); }
-    .btn-whatsapp { background: #25D366; color: white; gap: 10px; }
-    .btn-whatsapp:hover { background: #1da851; }
-
-    .logo { display: inline-flex; align-items: center; gap: 2px; }
-    .logo-globe { width: 30px; height: 30px; margin-right: -9px; z-index: 1; position: relative; }
-    .logo-wordmark {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-      font-size: 26px; color: var(--brand);
-      letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative;
-    }
-    .logo-globe svg { width: 100%; height: 100%; }
-    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line {
-      fill: none; stroke: var(--globe); stroke-width: 0.7;
-    }
-    footer .logo-wordmark { color: white; }
-    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line { stroke: rgba(255,255,255,0.35); }
-
-    header {
-      position: sticky; top: 0;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: saturate(180%) blur(14px);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid transparent;
-      z-index: 100; transition: border-color 0.3s, background 0.3s;
-    }
-    header.scrolled { border-bottom-color: var(--divider-soft); background: rgba(255,255,255,0.95); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-links { display: none; gap: 6px; list-style: none; }
-    @media (min-width: 1024px) { .nav-links { display: flex; } }
-    .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--ink);
-      padding: 8px 14px; border-radius: 8px; transition: background 0.2s;
-    }
-    .nav-links a:hover { background: var(--brand-tint); color: var(--brand); }
-    .nav .btn { padding: 10px 18px; font-size: 14px; }
-
-    /* HERO */
     @keyframes remcPulse { 0%,100% { opacity:.18; } 50% { opacity:.5; } }
     @keyframes remcSubGlow {
       0%,100% { filter: drop-shadow(0 6px 18px rgba(33,71,249,.30)); }
@@ -127,133 +37,16 @@
     }
     .remc-hero-grid { width:100%; max-width:1320px; display:grid; grid-template-columns:0.92fr 1.18fr; gap:40px; align-items:center; margin:0 auto; padding:56px 48px; }
     @media (max-width:980px) {
-      .remc-hero-grid { grid-template-columns: 1fr !important; gap:20px !important; padding:40px 24px; }
+      .remc-hero-grid { grid-template-columns:1fr !important; gap:20px !important; padding:40px 24px; }
       .remc-hero-copy { text-align:center !important; align-items:center !important; }
       .remc-hero-copy .remc-ctas, .remc-hero-copy .remc-usp { justify-content:center !important; }
       .remc-anim { order:-1 !important; max-width:520px; margin:0 auto; }
       .remc-h1 { font-size:40px !important; }
       .remc-sub { font-size:17px !important; }
     }
-    @media (max-width:560px) {
-      .remc-h1 { font-size:32px !important; }
-      .remc-sub { font-size:16px !important; }
-    }
-    @media (max-width:380px) {
-      .remc-h1 { font-size:27px !important; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .cycle-list { animation: none !important; }
-      .remc-hero-section * { animation: none !important; }
-    }
-
-    /* PLANS */
-    .plans-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 768px) { .plans-grid { grid-template-columns: repeat(4, 1fr); } }
-    .plan-card {
-      background: white; border: 1px solid var(--divider);
-      border-radius: 20px; padding: 32px 28px;
-      display: flex; flex-direction: column;
-      transition: all 0.25s; position: relative;
-    }
-    .plan-card:hover { border-color: var(--brand); transform: translateY(-3px); }
-    .plan-card.featured { background: var(--ink); color: white; border-color: var(--ink); }
-    .plan-card.featured::before {
-      content: 'Most popular';
-      position: absolute; top: -12px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--brand); color: white;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 5px 14px; border-radius: 100px;
-    }
-    .plan-card.featured .plan-name { color: var(--brand-light); }
-    .plan-card.featured h3 { color: white; }
-    .plan-card.featured .plan-tag { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.15); }
-    .plan-card.featured .plan-feat { color: rgba(255,255,255,0.85); }
-    .plan-card.featured .plan-feat::before { border-color: var(--brand-light); }
-    .plan-name {
-      font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--brand);
-      margin-bottom: 10px;
-    }
-    .plan-card h3 { font-size: 24px; margin-bottom: 8px; }
-    .plan-tag {
-      display: inline-block; font-size: 13px; color: var(--muted);
-      padding: 6px 12px; border: 1px solid var(--divider);
-      border-radius: 100px; margin-bottom: 24px;
-    }
-    .plan-feats { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
-    .plan-feat {
-      font-size: 14px; padding: 8px 0 8px 24px;
-      position: relative; color: var(--body); line-height: 1.5;
-    }
-    .plan-feat::before {
-      content: ''; position: absolute; left: 0; top: 14px;
-      width: 12px; height: 6px;
-      border-left: 2px solid var(--brand);
-      border-bottom: 2px solid var(--brand);
-      transform: rotate(-45deg);
-    }
-    .plan-cta { display: block; text-align: center; width: 100%; padding: 14px; font-size: 14px; }
-    .section-header { max-width: 800px; margin: 0 auto 64px; text-align: center; }
-    .section-header h2 { margin-bottom: 14px; max-width: 18ch; margin-left: auto; margin-right: auto; }
-
-    /* SERVICES */
-    .services-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
-    @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 980px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
-    .service-card { background: white; border: 1px solid var(--divider); border-radius: 20px; padding: 32px 28px; transition: all 0.25s; }
-    .service-card:hover { border-color: var(--brand); transform: translateY(-3px); }
-    .service-card .icon { width: 44px; height: 44px; background: var(--brand-tint); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--brand); margin-bottom: 18px; }
-    .service-card .icon svg { width: 22px; height: 22px; }
-    .service-card h3 { font-size: 20px; margin-bottom: 10px; }
-    .service-card p { font-size: 15px; color: var(--body); line-height: 1.55; }
-
-    /* CASES */
-    .cases-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media (min-width: 768px) { .cases-grid { grid-template-columns: 1fr 1fr; } }
-    .case-card { background: white; border: 1px solid var(--divider); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; }
-    .case-card .case-brand { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 4px; }
-    .case-card .case-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
-    .case-card .case-pill { display: inline-block; background: var(--brand-tint); color: var(--brand); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; align-self: flex-start; }
-    .case-card blockquote { font-size: 19px; line-height: 1.45; color: var(--ink); font-weight: 500; letter-spacing: -0.015em; margin: 0 0 22px; }
-    .case-card .case-attrib { display: flex; align-items: center; gap: 12px; padding-top: 22px; border-top: 1px solid var(--divider-soft); margin-top: auto; }
-    .case-card .case-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--brand-tint); color: var(--brand); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
-    .case-card .case-name { font-size: 14px; font-weight: 600; color: var(--ink); }
-    .case-card .case-role { font-size: 12px; color: var(--muted); }
-
-    .cta-banner {
-      max-width: 1200px; margin: 0 auto;
-      padding: 80px 40px;
-      background: linear-gradient(135deg, var(--ink) 0%, #14213f 100%);
-      color: white; border-radius: 28px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-banner::before {
-      content: ''; position: absolute; top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(circle at 100% 0%, rgba(33, 71, 249, 0.4), transparent 60%);
-    }
-    .cta-banner > * { position: relative; }
-    .cta-banner h2 { color: white; margin-bottom: 16px; max-width: 16ch; margin-left: auto; margin-right: auto; }
-    .cta-banner p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 60ch; margin: 0 auto 32px; }
-    .cta-banner .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .cta-banner .btn-brand { background: var(--brand); }
-    .cta-banner .btn-ghost { background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.2); }
-
-    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
-    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; } }
-    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
-    footer ul { list-style: none; }
-    footer li { margin-bottom: 10px; }
-    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
-    footer a:hover { color: var(--brand-light); }
-    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
-    .footer-brand .contact { margin-top: 18px; font-size: 13px; line-height: 1.8; }
-    .footer-brand .contact a { color: rgba(255,255,255,0.85); display: block; }
-    .footer-base { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
-    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
-    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+    @media (max-width:560px) { .remc-h1 { font-size:32px !important; } .remc-sub { font-size:16px !important; } }
+    @media (max-width:380px) { .remc-h1 { font-size:27px !important; } }
+    @media (prefers-reduced-motion:reduce) { .remc-hero-section * { animation:none !important; } }
   </style>
 
   <script type="application/ld+json">
@@ -317,78 +110,61 @@
   <header id="header">
     <div class="container">
       <nav class="nav">
-        <a href="#" class="logo">
-          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-          <span class="logo-wordmark">remc</span>
-        </a>
+        <a href="#" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
         <ul class="nav-links">
           <li><a href="services.html">Services</a></li>
-          <li><a href="#plans">Plans</a></li>
+          <li><a href="plans.html">Plans</a></li>
           <li><a href="case-studies.html">Case studies</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="store.html">Store</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Book a call</a>
+        <a href="contact.html" class="btn btn-primary">Book a call</a>
       </nav>
     </div>
   </header>
 
   <section class="remc-hero-section">
     <div class="remc-hero-grid">
-
-      <!-- LEFT: COPY -->
-      <div class="remc-hero-copy" style="display:flex; flex-direction:column; align-items:flex-start; gap:26px;">
-
-        <a href="store.html" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; padding:7px 14px 7px 7px; border:1px solid #e7e8ee; border-radius:999px; background:#fff; box-shadow:0 1px 2px rgba(16,24,40,.04); font-size:14px; color:#3a4050;">
-          <span style="display:inline-flex; align-items:center; background:#2147f9; color:#fff; font-weight:700; font-size:11px; letter-spacing:.06em; padding:4px 9px; border-radius:999px;">NEW</span>
+      <div class="remc-hero-copy" style="display:flex;flex-direction:column;align-items:flex-start;gap:26px;">
+        <a href="store.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:7px 14px 7px 7px;border:1px solid #e7e8ee;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04);font-size:14px;color:#3a4050;">
+          <span style="display:inline-flex;align-items:center;background:#2147f9;color:#fff;font-weight:700;font-size:11px;letter-spacing:.06em;padding:4px 9px;border-radius:999px;">NEW</span>
           <span style="font-weight:500;">Start-Up Pack — pricing toolkit for sole traders</span>
           <span style="color:#9aa0ad;">→</span>
         </a>
-
-        <h1 class="remc-h1" style="margin:0; font-family:'Manrope',system-ui,sans-serif; font-weight:800; font-size:64px; line-height:1.03; letter-spacing:-.026em; color:#0e1320;">
+        <h1 class="remc-h1" style="margin:0;font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:64px;line-height:1.03;letter-spacing:-.026em;color:#0e1320;">
           Outsourced electrical estimating for UK
-          <span class="cycle-wrap" aria-label="contractors, sole traders, start-ups, and growing firms" style="position:relative; display:inline-flex; overflow:hidden; height:1.22em; vertical-align:bottom; color:#2147f9;">
-            <span aria-hidden="true" style="visibility:hidden; white-space:nowrap;">growing firms.</span>
-            <span class="cycle-list" aria-hidden="true" style="position:absolute; left:0; top:0; display:flex; flex-direction:column; animation:remcCycle 9s cubic-bezier(.76,0,.24,1) infinite;">
-              <span style="display:flex; align-items:center; height:1.22em; line-height:1; white-space:nowrap;">contractors.</span>
-              <span style="display:flex; align-items:center; height:1.22em; line-height:1; white-space:nowrap;">sole traders.</span>
-              <span style="display:flex; align-items:center; height:1.22em; line-height:1; white-space:nowrap;">start-ups.</span>
-              <span style="display:flex; align-items:center; height:1.22em; line-height:1; white-space:nowrap;">growing firms.</span>
-              <span style="display:flex; align-items:center; height:1.22em; line-height:1; white-space:nowrap;">contractors.</span>
+          <span class="cycle-wrap" aria-label="contractors, sole traders, start-ups, and growing firms" style="position:relative;display:inline-flex;overflow:hidden;height:1.22em;vertical-align:bottom;color:#2147f9;">
+            <span aria-hidden="true" style="visibility:hidden;white-space:nowrap;">growing firms.</span>
+            <span class="cycle-list" aria-hidden="true" style="position:absolute;left:0;top:0;display:flex;flex-direction:column;animation:remcCycle 9s cubic-bezier(.76,0,.24,1) infinite;">
+              <span style="display:flex;align-items:center;height:1.22em;line-height:1;white-space:nowrap;">contractors.</span>
+              <span style="display:flex;align-items:center;height:1.22em;line-height:1;white-space:nowrap;">sole traders.</span>
+              <span style="display:flex;align-items:center;height:1.22em;line-height:1;white-space:nowrap;">start-ups.</span>
+              <span style="display:flex;align-items:center;height:1.22em;line-height:1;white-space:nowrap;">growing firms.</span>
+              <span style="display:flex;align-items:center;height:1.22em;line-height:1;white-space:nowrap;">contractors.</span>
             </span>
           </span>
         </h1>
-
-        <p class="remc-sub" style="margin:0; max-width:540px; font-size:19px; line-height:1.55; color:#5b6170;">Glasgow-based, working with UK contractors when tender volume outgrows the in-house team. £3.9M+ priced in 2026 across England, Scotland and Wales. <strong style="color:#0e1320; font-weight:700;">One-off tender or Monthly Service Plan, your choice.</strong></p>
-
-        <div class="remc-ctas" style="display:flex; flex-wrap:wrap; gap:14px;">
-          <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:#0e1320; color:#fff; font-family:'Manrope',system-ui,sans-serif; font-weight:700; font-size:16px; padding:16px 26px; border-radius:12px;">Book a 20-min call →</a>
-          <a href="https://wa.me/447822033278?text=Hi%20REMC%2C%20I%27d%20like%20to%20discuss%20outsourced%20electrical%20estimating" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; text-decoration:none; background:#25d366; color:#fff; font-family:'Manrope',system-ui,sans-serif; font-weight:700; font-size:16px; padding:16px 26px; border-radius:12px;">
+        <p class="remc-sub" style="margin:0;max-width:540px;font-size:19px;line-height:1.55;color:#5b6170;">Glasgow-based, working with UK contractors when tender volume outgrows the in-house team. £3.9M+ priced in 2026 across England, Scotland and Wales. <strong style="color:#0e1320;font-weight:700;">One-off tender or Monthly Service Plan, your choice.</strong></p>
+        <div class="remc-ctas" style="display:flex;flex-wrap:wrap;gap:14px;">
+          <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#0e1320;color:#fff;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:16px;padding:16px 26px;border-radius:12px;">Book a 20-min call →</a>
+          <a href="https://wa.me/447822033278?text=Hi%20REMC%2C%20I%27d%20like%20to%20discuss%20outsourced%20electrical%20estimating" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#25d366;color:#fff;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:16px;padding:16px 26px;border-radius:12px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"></path></svg>
             WhatsApp
           </a>
         </div>
-
-        <div class="remc-usp" style="display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border:1px solid #ececf1; border-radius:999px; background:rgba(255,255,255,.75); font-size:15px; color:#5b6170;">
-          <span style="width:9px; height:9px; border-radius:50%; background:#e0263b; flex:none;"></span>
-          <span><strong style="color:#0e1320; font-weight:700;">Pay-on-win pricing.</strong> Our fees sit in your tender prelims — win the job and our work cost you nothing.</span>
+        <div class="remc-usp" style="display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid #ececf1;border-radius:999px;background:rgba(255,255,255,.75);font-size:15px;color:#5b6170;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#e0263b;flex:none;"></span>
+          <span><strong style="color:#0e1320;font-weight:700;">Pay-on-win pricing.</strong> Our fees sit in your tender prelims — win the job and our work cost you nothing.</span>
         </div>
       </div>
-
-      <!-- RIGHT: ANIMATION -->
-      <div class="remc-anim" style="position:relative; width:100%;">
-        <div style="position:absolute; inset:-8% -4% -8% -4%; background:radial-gradient(ellipse 60% 56% at 52% 42%, rgba(33,71,249,.16), transparent 70%); pointer-events:none;"></div>
-        <svg viewBox="0 0 1200 760" style="width:100%; height:auto; display:block; overflow:visible;" xmlns="http://www.w3.org/2000/svg">
+      <div class="remc-anim" style="position:relative;width:100%;">
+        <div style="position:absolute;inset:-8% -4% -8% -4%;background:radial-gradient(ellipse 60% 56% at 52% 42%,rgba(33,71,249,.16),transparent 70%);pointer-events:none;"></div>
+        <svg viewBox="0 0 1200 760" style="width:100%;height:auto;display:block;overflow:visible;" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="remcVent" width="7" height="18" patternUnits="userSpaceOnUse">
-              <line x1="1.4" y1="2" x2="1.4" y2="16" stroke="#c6cbd6" stroke-width="1.4"></line>
-            </pattern>
-            <filter id="remcGlow" x="-120%" y="-120%" width="340%" height="340%">
-              <feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur>
-              <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
+            <pattern id="remcVent" width="7" height="18" patternUnits="userSpaceOnUse"><line x1="1.4" y1="2" x2="1.4" y2="16" stroke="#c6cbd6" stroke-width="1.4"></line></pattern>
+            <filter id="remcGlow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
             <path id="rp1" d="M285,168 C 360,168 388,232 470,232" fill="none"></path>
             <path id="rp2" d="M286,272 C 360,272 392,292 450,292" fill="none"></path>
             <path id="rp3" d="M302,370 C 372,370 398,344 452,344" fill="none"></path>
@@ -397,12 +173,7 @@
             <path id="rp6" d="M800,636 C 758,560 736,472 700,424" fill="none"></path>
             <path id="rpSub" d="M752,300 C 794,300 816,348 850,348" fill="none"></path>
           </defs>
-
-          <g stroke="#cdd1da" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round" fill="none">
-            <use href="#rp1"></use><use href="#rp2"></use><use href="#rp3"></use>
-            <use href="#rp4"></use><use href="#rp5"></use><use href="#rp6"></use><use href="#rpSub"></use>
-          </g>
-
+          <g stroke="#cdd1da" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round" fill="none"><use href="#rp1"></use><use href="#rp2"></use><use href="#rp3"></use><use href="#rp4"></use><use href="#rp5"></use><use href="#rp6"></use><use href="#rpSub"></use></g>
           <g fill="#2147f9" filter="url(#remcGlow)">
             <circle r="3.8"><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite" calcMode="linear"><mpath href="#rp1"></mpath></animateMotion><animate attributeName="opacity" dur="3.4s" begin="0s" values="0;1;1;0" keyTimes="0;0.12;0.88;1" repeatCount="indefinite"></animate></circle>
             <circle r="3.8"><animateMotion dur="3.4s" begin="-1.13s" repeatCount="indefinite" calcMode="linear"><mpath href="#rp1"></mpath></animateMotion><animate attributeName="opacity" dur="3.4s" begin="-1.13s" values="0;1;1;0" keyTimes="0;0.12;0.88;1" repeatCount="indefinite"></animate></circle>
@@ -423,121 +194,43 @@
             <circle r="3.8"><animateMotion dur="3.5s" begin="-2.07s" repeatCount="indefinite" calcMode="linear"><mpath href="#rp6"></mpath></animateMotion><animate attributeName="opacity" dur="3.5s" begin="-2.07s" values="0;1;1;0" keyTimes="0;0.12;0.88;1" repeatCount="indefinite"></animate></circle>
             <circle r="3.8"><animateMotion dur="3.5s" begin="-3.24s" repeatCount="indefinite" calcMode="linear"><mpath href="#rp6"></mpath></animateMotion><animate attributeName="opacity" dur="3.5s" begin="-3.24s" values="0;1;1;0" keyTimes="0;0.12;0.88;1" repeatCount="indefinite"></animate></circle>
           </g>
-
           <g fill="#2147f9" filter="url(#remcGlow)">
             <circle r="4.4"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite" calcMode="linear"><mpath href="#rpSub"></mpath></animateMotion><animate attributeName="opacity" dur="2.4s" begin="0s" values="0;1;1;0" keyTimes="0;0.15;0.85;1" repeatCount="indefinite"></animate></circle>
             <circle r="4.4"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite" calcMode="linear"><mpath href="#rpSub"></mpath></animateMotion><animate attributeName="opacity" dur="2.4s" begin="-1.2s" values="0;1;1;0" keyTimes="0;0.15;0.85;1" repeatCount="indefinite"></animate></circle>
           </g>
-
           <circle cx="600" cy="300" fill="none" stroke="#2147f9" stroke-width="1.5" style="animation:remcRing 3.4s ease-out infinite;"></circle>
           <circle cx="600" cy="300" fill="none" stroke="#2147f9" stroke-width="1.5" style="animation:remcRing 3.4s ease-out infinite 1.7s;"></circle>
-
           <rect x="448" y="172" width="304" height="252" rx="14" fill="#ffffff" stroke="#c8cdd8" stroke-width="1.6"></rect>
           <rect x="448" y="172" width="304" height="252" rx="14" fill="none" stroke="#2147f9" stroke-width="2" style="animation:remcPulse 3.4s ease-in-out infinite;"></rect>
-
           <path d="M448,186 a14,14 0 0 1 14,-14 h276 a14,14 0 0 1 14,14 v54 h-304 Z" fill="#2147f9"></path>
-          <g transform="translate(498,213)">
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#ffffff" stroke-width="2"></circle>
-            <ellipse cx="0" cy="0" rx="6" ry="15" fill="none" stroke="#ffffff" stroke-width="1.6"></ellipse>
-            <line x1="-15" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="1.6"></line>
-            <line x1="-12.5" y1="-8" x2="12.5" y2="-8" stroke="#ffffff" stroke-width="1.3"></line>
-            <line x1="-12.5" y1="8" x2="12.5" y2="8" stroke="#ffffff" stroke-width="1.3"></line>
-            <line x1="0" y1="-15" x2="0" y2="15" stroke="#ffffff" stroke-width="1.6"></line>
-          </g>
+          <g transform="translate(498,213)"><circle cx="0" cy="0" r="15" fill="none" stroke="#ffffff" stroke-width="2"></circle><ellipse cx="0" cy="0" rx="6" ry="15" fill="none" stroke="#ffffff" stroke-width="1.6"></ellipse><line x1="-15" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="1.6"></line><line x1="-12.5" y1="-8" x2="12.5" y2="-8" stroke="#ffffff" stroke-width="1.3"></line><line x1="-12.5" y1="8" x2="12.5" y2="8" stroke="#ffffff" stroke-width="1.3"></line><line x1="0" y1="-15" x2="0" y2="15" stroke="#ffffff" stroke-width="1.6"></line></g>
           <text x="524" y="223" font-family="'Manrope',sans-serif" font-weight="800" font-size="30" letter-spacing="-1.5" fill="#ffffff">remc</text>
           <circle cx="690" cy="213" r="3.4" fill="#ffffff" style="animation:remcDotBlink 1.5s ease-in-out infinite;"></circle>
           <circle cx="704" cy="213" r="3.4" fill="#8fffce" style="animation:remcDotBlink 1.5s ease-in-out infinite .5s;"></circle>
           <circle cx="718" cy="213" r="3.4" fill="rgba(255,255,255,.4)"></circle>
-
           <g font-family="'Manrope',sans-serif">
-            <rect x="466" y="252" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect>
-            <rect x="478" y="259" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect>
-            <line x1="482" y1="269" x2="494" y2="269" stroke="#2147f9" stroke-width="1.4"></line>
-            <rect x="512" y="261" width="150" height="16" fill="url(#remcVent)"></rect>
-            <circle cx="694" cy="269" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.8s ease-in-out infinite;"></circle>
-            <circle cx="710" cy="269" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.8s ease-in-out infinite .3s;"></circle>
-
-            <rect x="466" y="294" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect>
-            <rect x="478" y="301" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect>
-            <line x1="482" y1="311" x2="494" y2="311" stroke="#2147f9" stroke-width="1.4"></line>
-            <rect x="512" y="303" width="150" height="16" fill="url(#remcVent)"></rect>
-            <circle cx="694" cy="311" r="3.2" fill="#2147f9" style="animation:remcDotBlink 2.1s ease-in-out infinite .6s;"></circle>
-            <circle cx="710" cy="311" r="3.2" fill="#34c98a" style="animation:remcDotBlink 2.1s ease-in-out infinite .9s;"></circle>
-
-            <rect x="466" y="336" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect>
-            <rect x="478" y="343" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect>
-            <line x1="482" y1="353" x2="494" y2="353" stroke="#2147f9" stroke-width="1.4"></line>
-            <rect x="512" y="345" width="150" height="16" fill="url(#remcVent)"></rect>
-            <circle cx="694" cy="353" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.6s ease-in-out infinite .2s;"></circle>
-            <circle cx="710" cy="353" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.6s ease-in-out infinite .7s;"></circle>
-
-            <rect x="466" y="378" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect>
-            <rect x="478" y="385" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect>
-            <line x1="482" y1="395" x2="494" y2="395" stroke="#2147f9" stroke-width="1.4"></line>
-            <rect x="512" y="387" width="150" height="16" fill="url(#remcVent)"></rect>
-            <circle cx="694" cy="395" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.9s ease-in-out infinite .4s;"></circle>
-            <circle cx="710" cy="395" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.9s ease-in-out infinite 1s;"></circle>
+            <rect x="466" y="252" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect><rect x="478" y="259" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect><line x1="482" y1="269" x2="494" y2="269" stroke="#2147f9" stroke-width="1.4"></line><rect x="512" y="261" width="150" height="16" fill="url(#remcVent)"></rect><circle cx="694" cy="269" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.8s ease-in-out infinite;"></circle><circle cx="710" cy="269" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.8s ease-in-out infinite .3s;"></circle>
+            <rect x="466" y="294" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect><rect x="478" y="301" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect><line x1="482" y1="311" x2="494" y2="311" stroke="#2147f9" stroke-width="1.4"></line><rect x="512" y="303" width="150" height="16" fill="url(#remcVent)"></rect><circle cx="694" cy="311" r="3.2" fill="#2147f9" style="animation:remcDotBlink 2.1s ease-in-out infinite .6s;"></circle><circle cx="710" cy="311" r="3.2" fill="#34c98a" style="animation:remcDotBlink 2.1s ease-in-out infinite .9s;"></circle>
+            <rect x="466" y="336" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect><rect x="478" y="343" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect><line x1="482" y1="353" x2="494" y2="353" stroke="#2147f9" stroke-width="1.4"></line><rect x="512" y="345" width="150" height="16" fill="url(#remcVent)"></rect><circle cx="694" cy="353" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.6s ease-in-out infinite .2s;"></circle><circle cx="710" cy="353" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.6s ease-in-out infinite .7s;"></circle>
+            <rect x="466" y="378" width="268" height="34" rx="6" fill="#f7f8fb" stroke="#dde1e8" stroke-width="1.2"></rect><rect x="478" y="385" width="20" height="20" rx="3" fill="#eaeefc" stroke="#2147f9" stroke-width="1.3"></rect><line x1="482" y1="395" x2="494" y2="395" stroke="#2147f9" stroke-width="1.4"></line><rect x="512" y="387" width="150" height="16" fill="url(#remcVent)"></rect><circle cx="694" cy="395" r="3.2" fill="#2147f9" style="animation:remcDotBlink 1.9s ease-in-out infinite .4s;"></circle><circle cx="710" cy="395" r="3.2" fill="#34c98a" style="animation:remcDotBlink 1.9s ease-in-out infinite 1s;"></circle>
           </g>
-
           <g font-family="'Manrope',sans-serif" font-weight="600" font-size="21" fill="#2a2f3a">
-            <g>
-              <rect x="115" y="148" width="172" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <rect x="129" y="162" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect>
-              <line x1="135" y1="170" x2="147" y2="170" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="135" y1="176" x2="147" y2="176" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="135" y1="182" x2="143" y2="182" stroke="#2147f9" stroke-width="1.6"></line>
-              <text x="166" y="179">Drawings</text>
-            </g>
-            <g>
-              <rect x="105" y="252" width="186" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <rect x="119" y="266" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect>
-              <line x1="125" y1="274" x2="137" y2="274" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="125" y1="280" x2="137" y2="280" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="125" y1="286" x2="133" y2="286" stroke="#2147f9" stroke-width="1.6"></line>
-              <text x="156" y="283">Tender docs</text>
-            </g>
-            <g>
-              <rect x="120" y="350" width="186" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <rect x="134" y="364" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect>
-              <line x1="140" y1="372" x2="152" y2="372" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="140" y1="378" x2="152" y2="378" stroke="#2147f9" stroke-width="1.6"></line>
-              <line x1="140" y1="384" x2="148" y2="384" stroke="#2147f9" stroke-width="1.6"></line>
-              <text x="171" y="381">Specifications</text>
-            </g>
+            <g><rect x="115" y="148" width="172" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><rect x="129" y="162" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect><line x1="135" y1="170" x2="147" y2="170" stroke="#2147f9" stroke-width="1.6"></line><line x1="135" y1="176" x2="147" y2="176" stroke="#2147f9" stroke-width="1.6"></line><line x1="135" y1="182" x2="143" y2="182" stroke="#2147f9" stroke-width="1.6"></line><text x="166" y="179">Drawings</text></g>
+            <g><rect x="105" y="252" width="186" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><rect x="119" y="266" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect><line x1="125" y1="274" x2="137" y2="274" stroke="#2147f9" stroke-width="1.6"></line><line x1="125" y1="280" x2="137" y2="280" stroke="#2147f9" stroke-width="1.6"></line><line x1="125" y1="286" x2="133" y2="286" stroke="#2147f9" stroke-width="1.6"></line><text x="156" y="283">Tender docs</text></g>
+            <g><rect x="120" y="350" width="186" height="50" rx="9" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><rect x="134" y="364" width="24" height="28" rx="5" fill="#eaeefc" stroke="#2147f9" stroke-width="1.4"></rect><line x1="140" y1="372" x2="152" y2="372" stroke="#2147f9" stroke-width="1.6"></line><line x1="140" y1="378" x2="152" y2="378" stroke="#2147f9" stroke-width="1.6"></line><line x1="140" y1="384" x2="148" y2="384" stroke="#2147f9" stroke-width="1.6"></line><text x="171" y="381">Specifications</text></g>
           </g>
-
           <g font-family="'Manrope',sans-serif" font-weight="600" font-size="21" fill="#2a2f3a">
-            <g>
-              <rect x="248" y="636" width="156" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <circle cx="276" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle>
-              <circle cx="276" cy="659" r="2.4" fill="#2147f9"></circle>
-              <text x="294" y="664">Take-off</text>
-            </g>
-            <g>
-              <rect x="468" y="636" width="176" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <circle cx="496" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle>
-              <circle cx="496" cy="659" r="2.4" fill="#2147f9"></circle>
-              <text x="514" y="664">Pricing build</text>
-            </g>
-            <g>
-              <rect x="722" y="636" width="160" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect>
-              <circle cx="750" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle>
-              <circle cx="750" cy="659" r="2.4" fill="#2147f9"></circle>
-              <text x="768" y="664">Handover</text>
-            </g>
+            <g><rect x="248" y="636" width="156" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><circle cx="276" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle><circle cx="276" cy="659" r="2.4" fill="#2147f9"></circle><text x="294" y="664">Take-off</text></g>
+            <g><rect x="468" y="636" width="176" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><circle cx="496" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle><circle cx="496" cy="659" r="2.4" fill="#2147f9"></circle><text x="514" y="664">Pricing build</text></g>
+            <g><rect x="722" y="636" width="160" height="46" rx="23" fill="#ffffff" stroke="#dadee6" stroke-width="1.4"></rect><circle cx="750" cy="659" r="7" fill="none" stroke="#2147f9" stroke-width="2"></circle><circle cx="750" cy="659" r="2.4" fill="#2147f9"></circle><text x="768" y="664">Handover</text></g>
           </g>
-
           <g style="animation:remcSubGlow 2.4s ease-in-out infinite;">
             <rect x="848" y="320" width="178" height="58" rx="29" fill="#2147f9"></rect>
             <text x="872" y="356" font-family="'Manrope',sans-serif" font-weight="700" font-size="19" fill="#ffffff">Submission</text>
-            <g stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round">
-              <circle cx="1000" cy="349" r="10" stroke-width="1.8"></circle>
-              <path d="M995,349 L 999,353 L 1006,345"></path>
-            </g>
+            <g stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round"><circle cx="1000" cy="349" r="10" stroke-width="1.8"></circle><path d="M995,349 L 999,353 L 1006,345"></path></g>
           </g>
         </svg>
       </div>
-
     </div>
   </section>
 
@@ -600,7 +293,7 @@
             <li class="plan-feat">BOQs &amp; submissions</li>
             <li class="plan-feat">Predictable monthly fee</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost plan-cta">Discuss Essential</a>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Essential</a>
         </div>
         <div class="plan-card featured">
           <div class="plan-name">Progress</div>
@@ -612,7 +305,7 @@
             <li class="plan-feat">Consistent estimator</li>
             <li class="plan-feat">Ongoing amendments</li>
           </ul>
-          <a href="#contact" class="btn btn-brand plan-cta">Discuss Progress</a>
+          <a href="contact.html" class="btn btn-brand plan-cta">Discuss Progress</a>
         </div>
         <div class="plan-card">
           <div class="plan-name">Enhanced</div>
@@ -624,7 +317,7 @@
             <li class="plan-feat">Lead estimator + backup</li>
             <li class="plan-feat">Live tender register</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost plan-cta">Discuss Enhanced</a>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Enhanced</a>
         </div>
         <div class="plan-card">
           <div class="plan-name">Priority</div>
@@ -636,7 +329,7 @@
             <li class="plan-feat">BD bolt-on available</li>
             <li class="plan-feat">Top-up hours included</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost plan-cta">Discuss Priority</a>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Priority</a>
         </div>
       </div>
     </div>
@@ -660,10 +353,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
-            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
-            <span class="logo-wordmark">remc</span>
-          </a>
+          <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo-white.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
           <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
           <div class="footer-nap" style="margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7);">
             <strong style="color: white; display: block; margin-bottom: 4px;">REMC Ltd</strong>
@@ -683,12 +373,13 @@
             <li><a href="about.html">About Liam</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="store.html">Store</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>Get in touch</h4>
           <ul>
-            <li><a href="#contact">Book a call</a></li>
+            <li><a href="contact.html">Book a call</a></li>
             <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
             <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
             <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
