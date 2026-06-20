@@ -100,7 +100,7 @@
     .page-hero .breadcrumb a { color: var(--muted); border-bottom: 1px dotted var(--muted); }
 
     /* ============ CAROUSEL ============ */
-    .carousel-section { padding: 32px 0 64px; overflow: hidden; }
+    .carousel-section { padding: 32px 0 64px; overflow: clip; }
     @media (min-width: 768px) { .carousel-section { padding: 40px 0 96px; } }
     .carousel-intro { max-width: 1100px; margin: 0 auto 24px; padding: 0 24px; text-align: center; }
     @media (min-width: 768px) { .carousel-intro { padding: 0 40px; } }
@@ -115,7 +115,7 @@
     .carousel-wrap { position: relative; max-width: 100%; padding: 16px 0; }
 
     .carousel-track {
-      display: flex; gap: 16px;
+      display: flex; flex-wrap: nowrap; gap: 16px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
