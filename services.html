@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | REMC — Outsourced Electrical Estimating UK</title>
+  <meta name="description" content="Full outsourced electrical estimating service for UK contractors. Take-off, BOM, sub enquiries, qualifications, submission packs. Glasgow-based, UK-wide.">
+  <link rel="canonical" href="https://remc.uk/services/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services | Outsourced Electrical Estimating UK | REMC">
+  <meta property="og:description" content="The full outsourced electrical estimating workflow REMC delivers — from take-off to submission-ready bid pack.">
+  <meta property="og:url" content="https://remc.uk/services/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Outsourced Electrical Estimating",
+    "provider": { "@type": "Organization", "name": "REMC Ltd", "url": "https://remc.uk" },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" },
+    "description": "Outsourced electrical estimating and preconstruction service for UK contractors. Take-off, BOM, sub enquiries, qualifications, and submission packs."
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --brand: #2147f9; --brand-dark: #1837D6; --brand-light: #4d6dfb;
+      --brand-tint: #EEF2F8; --brand-soft: #F7F9FE;
+      --ink: #0a0e27; --line: #111114;
+      --body: #4B5563; --muted: #9CA3AF;
+      --divider: #E5E7EB; --divider-soft: #F0F2F5;
+      --bg: #FFFFFF; --globe: #C7D2E2; --accent-red: #C8102E;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--body); background: var(--bg); line-height: 1.6; font-size: 17px;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    body::before { content: ''; display: block; height: 3px; background: var(--accent-red); }
+    h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; color: var(--ink); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; }
+    h1 { font-size: clamp(36px, 5vw, 54px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+    h2 { font-size: clamp(24px, 3vw, 32px); margin: 56px 0 16px; letter-spacing: -0.025em; }
+    h3 { font-size: clamp(18px, 2vw, 22px); margin: 0 0 12px; }
+    p { margin: 0 0 18px; }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--ink); text-decoration: none; }
+    .article-body a { color: var(--brand); border-bottom: 1px solid var(--brand-light); padding-bottom: 1px; }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container-narrow { padding: 0 40px; } }
+    section { padding: 56px 0; }
+    @media (min-width: 768px) { section { padding: 80px 0; } }
+
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--brand); padding: 6px 12px; background: var(--brand-tint); border-radius: 100px; margin-bottom: 20px; }
+    .lead { font-size: clamp(18px, 1.6vw, 22px); color: var(--body); line-height: 1.55; max-width: 64ch; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 26px; font-weight: 600; font-size: 15px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.2s ease; font-family: inherit; text-decoration: none; line-height: 1; }
+    .btn-primary { background: var(--ink); color: white; }
+    .btn-primary:hover { background: #050813; transform: translateY(-1px); }
+    .btn-brand { background: var(--brand); color: white; }
+    .btn-brand:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--divider); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    .logo { display: inline-flex; align-items: center; gap: 2px; }
+    .logo-globe { width: 30px; height: 30px; margin-right: -9px; z-index: 1; position: relative; }
+    .logo-wordmark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; color: var(--brand); letter-spacing: -0.05em; line-height: 1; z-index: 2; position: relative; }
+    .logo-globe svg { width: 100%; height: 100%; }
+    .logo-globe svg circle, .logo-globe svg ellipse, .logo-globe svg line { fill: none; stroke: var(--globe); stroke-width: 0.7; }
+    footer .logo-wordmark { color: white; }
+    footer .logo-globe svg circle, footer .logo-globe svg ellipse, footer .logo-globe svg line { stroke: rgba(255,255,255,0.35); }
+
+    header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid transparent; z-index: 100; transition: border-color 0.3s, background 0.3s; }
+    header.scrolled { border-bottom-color: var(--divider-soft); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: none; gap: 4px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); padding: 8px 12px; border-radius: 8px; transition: background 0.2s; }
+    .nav-links a:hover { background: var(--brand-tint); color: var(--brand); }
+    .nav-links a.active { background: var(--brand-tint); color: var(--brand); }
+    .nav .btn { padding: 10px 18px; font-size: 14px; }
+
+    .page-hero { padding: 80px 0 40px; background: var(--brand-soft); border-bottom: 1px solid var(--divider-soft); }
+    .page-hero h1 { margin: 0 0 22px; max-width: 22ch; }
+    .page-hero .lead { margin: 0; }
+    .page-hero .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+    .page-hero .breadcrumb a { color: var(--muted); border-bottom: 1px dotted var(--muted); }
+
+    /* ============ CAROUSEL ============ */
+    .carousel-section { padding: 32px 0 64px; overflow: clip; }
+    @media (min-width: 768px) { .carousel-section { padding: 40px 0 96px; } }
+    .carousel-intro { max-width: 1100px; margin: 0 auto 24px; padding: 0 24px; text-align: center; }
+    @media (min-width: 768px) { .carousel-intro { padding: 0 40px; } }
+    .carousel-intro .hint {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--muted);
+      padding: 8px 16px; background: var(--brand-soft);
+      border: 1px solid var(--divider); border-radius: 100px;
+    }
+    .carousel-intro .hint svg { width: 14px; height: 14px; }
+
+    .carousel-wrap { position: relative; max-width: 100%; padding: 16px 0; }
+
+    .carousel-track {
+      display: flex; flex-wrap: nowrap; gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 12% 16px;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    @media (min-width: 768px) {
+      .carousel-track { padding: 8px 22% 16px; gap: 20px; }
+    }
+    @media (min-width: 1100px) {
+      .carousel-track { padding: 8px 28% 16px; gap: 24px; }
+    }
+
+    .c-card {
+      flex: 0 0 76%; max-width: 480px;
+      scroll-snap-align: center;
+      background: white; border: 1px solid var(--divider);
+      border-radius: 22px;
+      padding: 28px 26px 26px;
+      display: flex; flex-direction: column;
+      min-height: 560px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    @media (min-width: 768px) {
+      .c-card { flex-basis: 54%; padding: 32px 30px 28px; min-height: 600px; }
+    }
+    @media (min-width: 1100px) {
+      .c-card { flex-basis: 42%; }
+    }
+    .c-card:hover { border-color: var(--brand); box-shadow: 0 12px 32px rgba(33,71,249,0.08); }
+
+    .c-card.is-featured { border-color: var(--brand); border-width: 2px; box-shadow: 0 16px 40px rgba(33,71,249,0.12); }
+    .c-card.is-bolton { background: var(--brand-soft); border-color: var(--ink); }
+    .c-card.is-bolton .c-tag { background: var(--ink); color: white; }
+    .c-card.is-bolton .c-icon { background: var(--ink); color: var(--brand-light); }
+
+    .c-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: var(--brand-tint); color: var(--brand);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .c-icon svg { width: 26px; height: 26px; }
+    .c-card.is-featured .c-icon { background: var(--brand); color: white; }
+
+    .c-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--brand); background: var(--brand-tint);
+      padding: 4px 10px; border-radius: 100px;
+      margin-bottom: 10px; align-self: flex-start;
+    }
+    .c-card.is-featured .c-tag { background: var(--brand); color: white; }
+
+    .c-card h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 12px; }
+    .c-card p { font-size: 14px; line-height: 1.55; color: var(--body); margin: 0 0 14px; }
+    .c-card ul { list-style: none; padding: 0; margin: 6px 0 18px; flex: 1; }
+    .c-card li { position: relative; padding: 6px 0 6px 22px; font-size: 13px; color: var(--body); line-height: 1.5; }
+    .c-card li::before {
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 11px; height: 5px;
+      border-left: 2px solid var(--brand);
+      border-bottom: 2px solid var(--brand);
+      transform: rotate(-45deg);
+    }
+    .c-card .c-cta {
+      display: inline-block; margin-top: auto;
+      font-size: 13px; font-weight: 600; color: var(--brand);
+      border-bottom: 1px solid var(--brand-light);
+      padding-bottom: 2px; align-self: flex-start;
+    }
+    .c-card .c-note { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 12px; }
+
+    .carousel-controls {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-top: 24px; padding: 0 24px;
+    }
+    .c-arrow {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: white; border: 1px solid var(--divider);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s;
+      color: var(--ink);
+    }
+    .c-arrow:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+    .c-arrow:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+    .c-arrow svg { width: 18px; height: 18px; }
+
+    .c-dots { display: flex; gap: 8px; align-items: center; }
+    .c-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--divider); border: none;
+      cursor: pointer; transition: all 0.2s;
+      padding: 0;
+    }
+    .c-dot:hover { background: var(--muted); }
+    .c-dot.active { background: var(--brand); width: 24px; border-radius: 100px; }
+
+    .c-status { font-size: 13px; color: var(--muted); letter-spacing: 0.04em; min-width: 80px; text-align: center; }
+    .c-status strong { color: var(--ink); font-weight: 600; }
+
+    /* ============ SECTOR BANNER ============ */
+    .sector-banner {
+      background: var(--brand-soft);
+      color: var(--body);
+      padding: 56px 0 48px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--divider-soft);
+    }
+    @media (min-width: 768px) { .sector-banner { padding: 80px 0 64px; } }
+    .sector-glow { display: none; }
+    .sector-inner { position: relative; z-index: 1; }
+
+    .sector-banner h2 { color: var(--ink); margin: 0 0 28px; max-width: 24ch; }
+    .sector-banner p { color: var(--body); font-size: 17px; line-height: 1.7; margin-bottom: 18px; max-width: none; }
+    .sector-banner p:last-child { margin-bottom: 0; }
+    .sector-banner strong { color: var(--ink); font-weight: 600; }
+    .sector-banner .sector-close { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--divider); font-size: 17px; }
+
+    .sector-stats {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+      margin: 0 0 36px; padding: 24px;
+      background: white; border: 1px solid var(--divider); border-radius: 18px;
+    }
+    @media (min-width: 640px) { .sector-stats { grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 28px 32px; } }
+    .sector-stat .num {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      font-size: clamp(28px, 3.4vw, 36px); font-weight: 800;
+      color: var(--brand); letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px;
+    }
+    .sector-stat .label { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+    .cta-banner { max-width: 1100px; margin: 0 auto; padding: 72px 40px; background: linear-gradient(135deg, var(--ink) 0%, #14213f 100%); color: white; border-radius: 28px; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: radial-gradient(circle at 100% 0%, rgba(33, 71, 249, 0.4), transparent 60%); }
+    .cta-banner > * { position: relative; }
+    .cta-banner h2 { color: white; margin: 0 0 16px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .cta-banner p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 60ch; margin: 0 auto 28px; }
+    .cta-banner .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-banner .btn-brand { background: var(--brand); }
+    .cta-banner .btn-ghost { background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.2); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 72px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; } }
+    footer h4 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 700; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 14px; }
+    footer a:hover { color: var(--brand-light); }
+    .footer-brand p { font-size: 14px; max-width: 36ch; line-height: 1.55; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand .nap { margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+    .footer-brand .nap strong { color: white; display: block; margin-bottom: 4px; }
+    .footer-brand .nap a { color: rgba(255,255,255,0.85); display: block; font-size: 13px; }
+    .footer-base { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
+    @media (min-width: 768px) { .footer-base { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-base .links a { font-size: 12px; margin-right: 18px; color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/><ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/><line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/><ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+          <span class="logo-wordmark">remc</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="index.html">Home</a> · Services</p>
+      <span class="eyebrow">Services</span>
+      <h1>Outsourced electrical estimating — end to end.</h1>
+      <p class="lead">From document triage to a qualified, submission-ready bid pack. REMC handles the full preconstruction workflow for UK electrical contractors — and the building, joinery and trades-led main contractors who buy electrical packages from them. Glasgow-based, working with contractors across the United Kingdom.</p>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <div class="carousel-intro">
+      <span class="hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Swipe or use the arrows · 8 services to explore
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="services-carousel">
+
+        <article class="c-card" data-slide="0">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <span class="c-tag">Pay-on-win pricing</span>
+          <h3>One-off tenders</h3>
+          <p>Single bid priced this week. Fixed fee quoted within 24 hours of brief. No retainer, no commitment beyond the single project.</p>
+          <ul>
+            <li>Fixed fee quoted within 24 hours</li>
+            <li>Pay-on-win — fees sit in your tender prelims</li>
+            <li>Same delivery standard as retainer clients</li>
+            <li>Easy upgrade to Monthly Service Plan if it fits</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss a one-off tender →</a>
+        </article>
+
+        <article class="c-card" data-slide="1">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <span class="c-tag">Component service</span>
+          <h3>Submission pack</h3>
+          <p>Cover sheet, qualifications schedule, programme assumptions, exclusions and your priced BOM — issued in your contractor's house style.</p>
+          <ul>
+            <li>Branded to your company, not REMC</li>
+            <li>Qualifications schedule limits inherited risk</li>
+            <li>Delivered 48 hours before deadline where possible</li>
+            <li>Post-tender query support included</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss submission packs →</a>
+        </article>
+
+        <article class="c-card" data-slide="2">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <span class="c-tag">Component service</span>
+          <h3>Sub &amp; material enquiries</h3>
+          <p>Coordinated enquiry packs to your preferred suppliers and subs. We track responses, normalise quotes, and feed the lowest credible rate into your bid.</p>
+          <ul>
+            <li>Sent simultaneously with identical scope</li>
+            <li>Tracked in a live enquiry register</li>
+            <li>Responses normalised for fair comparison</li>
+            <li>Regional rates — Glasgow, London, etc.</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss enquiry management →</a>
+        </article>
+
+        <article class="c-card" data-slide="3">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <span class="c-tag">Component service</span>
+          <h3>Take-off &amp; BOM</h3>
+          <p>Bluebeam-marked drawings audited against the issue revision, translated into a clean, sectioned BOM you can defend in any post-tender review.</p>
+          <ul>
+            <li>Bluebeam profile aligned to your house style</li>
+            <li>Drawing-by-drawing audit trail</li>
+            <li>30–50% of total tender time spent here</li>
+            <li>Native Excel BOM, not flattened PDF</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss take-off services →</a>
+        </article>
+
+        <!-- CENTER: FULL TENDER SUBMISSION — default visible on load -->
+
+        <article class="c-card is-featured" data-slide="4" id="full-tender-submission">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <span class="c-tag">Flagship · end-to-end</span>
+          <h3>Full tender submission</h3>
+          <p>REMC's headline service. We take your tender brief and return a complete, submission-ready bid pack — take-off, BOM, enquiries, qualifications and a branded cover. You review, sign off, and submit.</p>
+          <ul>
+            <li>Document triage &amp; risk review</li>
+            <li>Bluebeam take-off with audit trail</li>
+            <li>Sectioned BOM (containment → testing → prelims)</li>
+            <li>Sub &amp; material enquiries managed end-to-end</li>
+            <li>Labour, plant, prelims, overhead build</li>
+            <li>Qualifications &amp; exclusions schedule</li>
+            <li>Branded submission pack, ready to issue</li>
+            <li>Post-tender query handling</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss a full submission →</a>
+        </article>
+
+        <article class="c-card" data-slide="5">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 10 3 14 21 17 12 21 12"/></svg></div>
+          <span class="c-tag">Retainer · 4 tiers</span>
+          <h3>Monthly Service Plans</h3>
+          <p>Four plans (Essential / Progress / Enhanced / Priority) for contractors who want a consistent estimator embedded month-on-month. Scaled from 9 to 54 hours/month.</p>
+          <ul>
+            <li>Predictable monthly fee, no surprise invoices</li>
+            <li>Consistent estimator across tenders</li>
+            <li>Top-up hours when pipeline spikes</li>
+            <li>30-day rolling, scale up or down</li>
+          </ul>
+          <a href="index.html#plans" class="c-cta">See the four plans →</a>
+        </article>
+
+        <article class="c-card is-bolton" data-slide="6" id="bd-bolton">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <span class="c-tag">Bolt-on · Priority plan</span>
+          <h3>Business Development</h3>
+          <p>REMC targets clients and main contractors on your behalf — gets you on their tender lists — then prices the work in-house when opportunities land. One relationship, two functions.</p>
+          <ul>
+            <li>Target client &amp; main contractor identification</li>
+            <li>PQQ and framework submissions</li>
+            <li>Warm introductions and outreach</li>
+            <li>Bid / no-bid pipeline triage</li>
+            <li>Closed-loop delivery — REMC prices what we source</li>
+            <li>Quarterly pipeline &amp; win-rate review</li>
+          </ul>
+          <a href="index.html#contact" class="c-cta">Discuss the BD bolt-on →</a>
+        </article>
+
+        <article class="c-card is-bolton" data-slide="7" id="electrical-package-management">
+          <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3z"/><path d="M3 7l3-4h12l3 4"/><line x1="9" y1="12" x2="15" y2="12"/></svg></div>
+          <span class="c-tag">For main contractors</span>
+          <h3>Electrical package management</h3>
+          <p>For building and joinery main contractors without an in-house QS. REMC manages the electrical sub-tender process end to end — issue, chase, normalise, recommend.</p>
+          <ul>
+            <li>Package preparation &amp; scope splits</li>
+            <li>Sub vetting — BS 7671 / NICEIC compliant subs</li>
+            <li>Issue and chase to 3–5 shortlisted bidders</li>
+            <li>Returns normalisation — like-for-like comparison</li>
+            <li>Written bid recommendation with reasoning</li>
+            <li>Optional post-award contract handover</li>
+          </ul>
+          <p class="c-note">Mechanical sub-package management is on the roadmap as a separate service line.</p>
+          <a href="index.html#contact" class="c-cta">Discuss package management →</a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="c-arrow" id="c-prev" aria-label="Previous service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="c-dots" id="c-dots" role="tablist" aria-label="Service slides">
+        <button class="c-dot" data-go="0" aria-label="Slide 1"></button>
+        <button class="c-dot" data-go="1" aria-label="Slide 2"></button>
+        <button class="c-dot" data-go="2" aria-label="Slide 3"></button>
+        <button class="c-dot" data-go="3" aria-label="Slide 4"></button>
+        <button class="c-dot active" data-go="4" aria-label="Slide 5"></button>
+        <button class="c-dot" data-go="5" aria-label="Slide 6"></button>
+        <button class="c-dot" data-go="6" aria-label="Slide 7"></button>
+        <button class="c-dot" data-go="7" aria-label="Slide 8"></button>
+      </div>
+      <div class="c-status"><strong id="c-current">5</strong> of 8</div>
+      <button class="c-arrow" id="c-next" aria-label="Next service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="sector-banner" id="sector-experience">
+    <div class="sector-glow"></div>
+    <div class="container-narrow sector-inner">
+      <span class="eyebrow">Sector &amp; geographic experience</span>
+      <h2>Pricing the whole UK landscape — Highlands to South Coast.</h2>
+
+      <div class="sector-stats">
+        <div class="sector-stat">
+          <div class="num">10+</div>
+          <div class="label">Distinct UK electrical sectors actively priced</div>
+        </div>
+        <div class="sector-stat">
+          <div class="num">UK-wide</div>
+          <div class="label">Inverness to London, Highlands to South Coast</div>
+        </div>
+        <div class="sector-stat">
+          <div class="num">~2 hrs</div>
+          <div class="label">Typical query response in business hours</div>
+        </div>
+      </div>
+
+      <p>REMC's tender book runs across every major UK electrical sector. <strong>Residential</strong> is the largest single category — housing schemes from West Highland villages through to student accommodation in the South of England, plus refurbishment work across the Lothians and central belt. <strong>Hospitality and leisure</strong> follows close behind: city-centre hotel and bar fit-outs in Glasgow, Edinburgh and central London; heritage venue restorations; and resort-style refurbishments at major UK leisure parks and racecourses.</p>
+
+      <p><strong>Education</strong> runs steady on our desk — university estate works across Birmingham, York, Sheffield and London, further-education college refurbishments through the Midlands and Yorkshire, and ASN primary school packages. <strong>Healthcare</strong> appears regularly, from private hospital fit-outs in Edinburgh and Glasgow through to NHS schemes in the North East. The book also covers <strong>retail</strong> (Yorkshire and Midlands business parks, high-street units), <strong>commercial offices</strong> (Glasgow CBD), <strong>public sector</strong> (police estate, depot rebuilds), <strong>logistics and distribution</strong>, <strong>industrial and manufacturing</strong>, and <strong>infrastructure works</strong> including airport temporary supplies.</p>
+
+      <p class="sector-close">Project values range from small fit-out top-ups through to seven-figure heritage installations. <strong>If your tender is in any UK electrical sector, anywhere from the Highlands to the South Coast, we've priced one like it recently.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <span class="eyebrow" style="background: rgba(255,255,255,0.1); color: white;">20-minute discovery call</span>
+        <h2>Send me your last three tenders. I'll tell you what I'd do differently.</h2>
+        <p>No pitch, no obligation. If REMC isn't the right fit you'll leave the call with three concrete observations you can use anyway.</p>
+        <div class="ctas">
+          <a href="index.html#contact" class="btn btn-brand">Book my 20-minute call →</a>
+          <a href="https://wa.me/447822033278" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-globe"><svg><use href="#globe"/></svg></span>
+            <span class="logo-wordmark">remc</span>
+          </a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="nap">
+            <strong>REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk">LinkedIn →</a>
+          </div>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#plans">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="index.html#contact">Book a call</a></li>
+            <li><a href="mailto:enquire@remc.uk">enquire@remc.uk</a></li>
+            <li><a href="https://wa.me/447822033278">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/company/remc-uk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394 · Glasgow, Scotland</div>
+        <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+
+    // Services carousel — scroll to "Full tender submission" on load, wire arrows + dots
+    (function(){
+      const track = document.getElementById('services-carousel');
+      const prev = document.getElementById('c-prev');
+      const next = document.getElementById('c-next');
+      const dots = document.querySelectorAll('#c-dots .c-dot');
+      const current = document.getElementById('c-current');
+      if (!track) return;
+      const slides = track.querySelectorAll('.c-card');
+      const TOTAL = slides.length;
+      const DEFAULT = 4; // 0-indexed — Full tender submission
+
+      function scrollToSlide(idx){
+        const slide = slides[idx];
+        if (!slide) return;
+        const trackRect = track.getBoundingClientRect();
+        const slideRect = slide.getBoundingClientRect();
+        const offset = slide.offsetLeft - (trackRect.width / 2) + (slideRect.width / 2);
+        track.scrollTo({ left: offset, behavior: 'smooth' });
+      }
+
+      function setActive(idx){
+        dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+        if (current) current.textContent = (idx + 1);
+        if (prev) prev.disabled = (idx === 0);
+        if (next) next.disabled = (idx === TOTAL - 1);
+      }
+
+      let scrollTimeout;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const trackCenter = track.scrollLeft + track.getBoundingClientRect().width / 2;
+          let closest = 0, closestDist = Infinity;
+          slides.forEach((s, i) => {
+            const slideCenter = s.offsetLeft + s.getBoundingClientRect().width / 2;
+            const dist = Math.abs(trackCenter - slideCenter);
+            if (dist < closestDist) { closestDist = dist; closest = i; }
+          });
+          setActive(closest);
+        }, 80);
+      });
+
+      function getActive(){
+        for (let i = 0; i < dots.length; i++) if (dots[i].classList.contains('active')) return i;
+        return DEFAULT;
+      }
+      prev && prev.addEventListener('click', () => scrollToSlide(Math.max(0, getActive() - 1)));
+      next && next.addEventListener('click', () => scrollToSlide(Math.min(TOTAL - 1, getActive() + 1)));
+
+      dots.forEach(dot => dot.addEventListener('click', () => {
+        scrollToSlide(parseInt(dot.dataset.go, 10));
+      }));
+
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); prev.click(); }
+      });
+      track.setAttribute('tabindex', '0');
+
+      requestAnimationFrame(() => {
+        setActive(DEFAULT);
+        const slide = slides[DEFAULT];
+        const trackRect = track.getBoundingClientRect();
+        const offset = slide.offsetLeft - (trackRect.width / 2) + (slide.getBoundingClientRect().width / 2);
+        track.scrollLeft = offset;
+      });
+    })();
+  </script>
+</body>
+</html>
