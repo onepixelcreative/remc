@@ -162,7 +162,7 @@
       .remc-hero-copy  { text-align: center; align-items: center; gap: 16px; }
       .remc-ctas, .remc-usp { justify-content: center; }
       .remc-anim       { order: -1; width: 100%; }
-      .remc-svg        { max-height: 240px; }
+      .remc-svg        { max-height: none; }
       .remc-h1         { font-size: 36px; }
       .remc-usp        { display: none; } /* hide below fold on mobile — buttons first */
     }
@@ -232,7 +232,7 @@
   <header id="header">
     <div class="container">
       <nav class="nav">
-        <a href="#" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
+        <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
         <ul class="nav-links">
           <li><a href="services.html">Services</a></li>
           <li><a href="plans.html">Plans</a></li>
@@ -242,8 +242,23 @@
           <li><a href="store.html">Store</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Book a call</a>
+        <a href="contact.html" class="btn btn-primary" style="display:none;" id="navCta">Book a call</a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="case-studies.html">Case studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary drawer-cta">Book a call</a>
     </div>
   </header>
 
@@ -518,6 +533,27 @@
   <script>
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+
+    // Show desktop CTA button, hamburger handles mobile
+    const navCta = document.getElementById('navCta');
+    if (window.matchMedia('(min-width: 1024px)').matches) navCta.style.display = '';
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', e => { navCta.style.display = e.matches ? '' : 'none'; });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navDrawer = document.getElementById('navDrawer');
+    navToggle.addEventListener('click', () => {
+      const open = navDrawer.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navDrawer.addEventListener('click', e => {
+      if (e.target.tagName === 'A') {
+        navDrawer.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
     document.addEventListener('click', function(e) {
       const a = e.target.closest('a');
       if (!a) return;
