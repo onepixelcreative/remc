@@ -17,11 +17,13 @@ production-ready. Search the codebase for `GO-LIVE TODO` to jump to each hook.
       on the `<video>` in `index.html` to avoid a flash before playback.
 
 ## 2. Integrations to wire
-- [ ] **Stripe** (`store.html`) — replace `pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY`
-      and the two `buy_btn_REPLACE_...` button IDs with live values. Set each Buy
-      Button's success URL to a thank-you page that delivers the purchased file.
-- [ ] **Product delivery** — paid products live in `_private/products/` (see §3). Wire
-      Stripe fulfilment to serve them from a gated/expiring link, NOT the public root.
+- [ ] **Gumroad** (`store.html`) — create both products on Gumroad (uploading the
+      files from `_private/products/` as each product's attachment), then replace
+      the two `GUMROAD_REPLACE_...` permalinks with the real product URLs.
+- [ ] **Product delivery** — paid products currently live in `_private/products/` (see §3).
+      Gumroad hosts the files and gates download behind payment directly, so once both
+      products are live there, remove `_private/products/` from this repo — the files
+      don't need to live in git at all once Gumroad has them.
 - [ ] **Mailing list** (`blog-first-tender-guide.html`) — the email opt-in currently
       saves to `localStorage` only. Wire it to your provider at the `GO-LIVE TODO`.
 - [ ] **LinkedIn slug** — confirm `linkedin.com/in/liammacleod-remc` resolves.

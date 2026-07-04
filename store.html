@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store | remc — Templates & tools for UK electrical estimators</title>
-  <meta name="description" content="Downloadable estimating packages for UK start-up contractors and sole traders. Start-Up Pack £150 · Commercial Templates £100. Secure Stripe checkout, instant download, lifetime updates.">
+  <meta name="description" content="Downloadable estimating packages for UK start-up contractors and sole traders. Start-Up Pack £150 · Commercial Templates £100. Secure Gumroad checkout, instant download, lifetime updates.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,14 +14,15 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <!--
-    GO-LIVE TODO — STRIPE SETUP:
-    1. In your Stripe Dashboard, create two products: "Start-Up Pack" (£150) and "Commercial Templates" (£100).
-    2. For each product, create a Buy Button (Stripe Dashboard → Payment Links → Buy Button).
-    3. Replace the buy-button-id values below with the IDs from your Stripe Dashboard.
-    4. Replace pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY with your live publishable key.
-    5. Set the success URL on each Buy Button to a thank-you page that delivers the download.
+    GO-LIVE TODO — GUMROAD SETUP:
+    1. In Gumroad, create two products: "Start-Up Pack" (£150) and "Commercial Templates" (£100),
+       uploading the files from _private/products/ as the product's attached files.
+    2. Replace the two GUMROAD_REPLACE_... permalinks below with each product's real Gumroad
+       URL (e.g. https://[yourname].gumroad.com/l/startup-pack).
+    3. Gumroad hosts the files and gates download behind payment — once products are live here,
+       remove _private/products/ from this repo; the files shouldn't need to live in git at all.
   -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+  <script src="https://gumroad.com/js/gumroad.js"></script>
 
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -301,7 +302,7 @@
       <div class="hero-inner">
         <span class="eyebrow">REMC Store · Templates &amp; tools</span>
         <h1>Tools and templates for UK electrical estimators.</h1>
-        <p class="hero-subhead">Downloadable packages built from the system REMC uses on every tender. One-time purchase via secure Stripe checkout. Instant download. Lifetime updates.</p>
+        <p class="hero-subhead">Downloadable packages built from the system REMC uses on every tender. One-time purchase via secure Gumroad checkout. Instant download. Lifetime updates.</p>
         <div class="hero-ctas">
           <a href="#products" class="btn btn-primary">Browse the packages →</a>
           <span class="price-pill">From £100</span>
@@ -316,7 +317,7 @@
       <div class="section-header">
         <span class="eyebrow">Two packages</span>
         <h2>Pick what fits your work.</h2>
-        <p class="lead">Both are one-time purchases via secure Stripe checkout. No subscription. Files arrive in your inbox the moment payment clears.</p>
+        <p class="lead">Both are one-time purchases via secure Gumroad checkout. No subscription. Files arrive in your inbox the moment payment clears.</p>
       </div>
 
       <div class="products-grid">
@@ -341,18 +342,11 @@
           </ul>
 
           <div class="product-checkout">
-            <!-- STRIPE BUY BUTTON: Start-Up Pack -->
-            <stripe-buy-button
-              buy-button-id="buy_btn_REPLACE_WITH_YOUR_STARTUP_BUTTON_ID"
-              publishable-key="pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY">
-            </stripe-buy-button>
-            <!-- Fallback if Stripe Buy Button isn't yet configured: -->
-            <noscript>
-              <a href="mailto:enquire@remc.uk?subject=Order:%20Start-Up%20Pack%20%C2%A3150" class="btn btn-primary">Buy now · £150</a>
-            </noscript>
+            <!-- GUMROAD BUY BUTTON: Start-Up Pack — replace with the real product permalink -->
+            <a href="https://GUMROAD_REPLACE_WITH_YOUR_USERNAME.gumroad.com/l/GUMROAD_REPLACE_STARTUP_PACK_SLUG" class="btn btn-primary gumroad-button" data-gumroad-single-product="true">Buy now · £150</a>
           </div>
           <p class="product-meta">
-            <span class="stripe-mark">Secure checkout via Stripe</span> · Card · Apple Pay · Google Pay
+            <span class="stripe-mark">Secure checkout via Gumroad</span> · Card · PayPal
           </p>
         </article>
 
@@ -375,17 +369,11 @@
           </ul>
 
           <div class="product-checkout">
-            <!-- STRIPE BUY BUTTON: Commercial Templates -->
-            <stripe-buy-button
-              buy-button-id="buy_btn_REPLACE_WITH_YOUR_COMMERCIAL_BUTTON_ID"
-              publishable-key="pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY">
-            </stripe-buy-button>
-            <noscript>
-              <a href="mailto:enquire@remc.uk?subject=Order:%20Commercial%20Templates%20%C2%A3100" class="btn btn-primary">Buy now · £100</a>
-            </noscript>
+            <!-- GUMROAD BUY BUTTON: Commercial Templates — replace with the real product permalink -->
+            <a href="https://GUMROAD_REPLACE_WITH_YOUR_USERNAME.gumroad.com/l/GUMROAD_REPLACE_COMMERCIAL_SLUG" class="btn btn-primary gumroad-button" data-gumroad-single-product="true">Buy now · £100</a>
           </div>
           <p class="product-meta">
-            <span class="stripe-mark">Secure checkout via Stripe</span> · Card · Apple Pay · Google Pay
+            <span class="stripe-mark">Secure checkout via Gumroad</span> · Card · PayPal
           </p>
         </article>
 
@@ -463,7 +451,7 @@
         </details>
         <details>
           <summary>Is the payment secure?</summary>
-          <div class="accordion-body"><p>Yes. Payments are processed by Stripe, the same payment infrastructure used by companies like Shopify, Amazon, and Slack. Card details never touch REMC's systems. Visa, Mastercard, Amex, Apple Pay, and Google Pay are all supported.</p></div>
+          <div class="accordion-body"><p>Yes. Payments are processed by Gumroad, a payment processor trusted by hundreds of thousands of digital creators worldwide. Card details never touch REMC's systems. Visa, Mastercard, Amex, and PayPal are all supported.</p></div>
         </details>
         <details>
           <summary>What's your refund policy?</summary>

@@ -24,9 +24,11 @@ structural/design change rather than a copy change, ask before proceeding.
 
 ## Do not touch
 
-- `_private/products/` — the paid Stripe/Gumroad product files. Never
-  reference these from a public-facing page in a way that exposes a direct
-  download link outside the checkout flow.
+- `_private/products/` — the paid Gumroad product files. Never reference
+  these from a public-facing page in a way that exposes a direct download
+  link outside the Gumroad checkout flow. Once both products are live on
+  Gumroad, these files should be removed from the repo entirely — Gumroad
+  hosts them and gates download behind payment.
 - `.github/workflows/deploy-pages.yml` — the deploy pipeline. It only
   publishes known web-asset extensions from the repo root and deliberately
   never recurses into subdirectories, so `_private/` is never published.
