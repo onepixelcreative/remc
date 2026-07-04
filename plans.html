@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Service Plans | REMC — Outsourced Electrical Estimating</title>
+  <meta name="description" content="Four Monthly Service Plans for UK electrical contractors — Essential, Progress, Enhanced, Priority. 9 to 54 hours of estimating support per month.">
+  <link rel="canonical" href="https://remc.uk/plans/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Monthly Service Plans | REMC — Outsourced Electrical Estimating">
+  <meta property="og:description" content="Four plans, tailored pricing. Outsourced electrical estimating on a monthly retainer for UK contractors.">
+  <meta property="og:url" content="https://remc.uk/plans/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does an outsourced electrical estimator cost in the UK?",
+        "acceptedAnswer": { "@type": "Answer", "text": "REMC offers four Monthly Service Plans ranging from 9 to 54 hours of estimating support per month. Pricing is tailored to tender volume and sector mix on a 20-minute discovery call. One-off tenders are quoted per project." }},
+      { "@type": "Question", "name": "Can I switch between plans?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Plans are 30-day rolling. Scale up when tender volume spikes, scale down when it eases. Top-up hours are available month-by-month without changing plan tier." }},
+      { "@type": "Question", "name": "What happens to unused hours at the end of the month?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Plan hours do not roll over. The plan is sized to your typical monthly capacity, with top-up hours available when you need more in a busy month." }}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--body); background: var(--bg); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; color: var(--ink); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; }
+    h1 { font-size: clamp(36px, 5vw, 54px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+    h2 { font-size: clamp(24px, 3vw, 32px); margin: 48px 0 16px; letter-spacing: -0.025em; }
+    h3 { font-size: clamp(18px, 2vw, 22px); margin: 0 0 8px; }
+    p { margin: 0 0 18px; }
+    p:last-child { margin-bottom: 0; }
+    
+    .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container-narrow { padding: 0 40px; } }
+    
+    
+    .lead { font-size: clamp(18px, 1.6vw, 22px); color: var(--body); line-height: 1.55; max-width: 64ch; }
+    
+    
+    
+    
+    
+    .page-hero { padding: 80px 0 40px; background: var(--brand-soft); border-bottom: 1px solid var(--divider-soft); text-align: center; }
+    .page-hero h1 { margin: 0 auto 22px; max-width: 22ch; }
+    .page-hero .lead { margin: 0 auto; }
+    
+    
+    .plans-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 768px) { .plans-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .plans-grid { grid-template-columns: repeat(4, 1fr); } }
+    .plan-card.featured .plan-fit { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+    .plan-tag { display: inline-block; font-size: 13px; color: var(--muted); padding: 6px 12px; border: 1px solid var(--divider); border-radius: 100px; margin-bottom: 18px; }
+    .plan-fit { font-size: 13px; color: var(--body); padding: 12px 14px; background: var(--brand-soft); border-radius: 10px; margin-bottom: 18px; line-height: 1.5; }
+    .plan-fit strong { color: var(--ink); font-weight: 600; }
+    .plan-feats { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+    .plan-detail { padding: 56px 0; border-bottom: 1px solid var(--divider-soft); }
+    .plan-detail:last-of-type { border-bottom: 0; }
+    .plan-detail-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; margin-bottom: 20px; }
+    .plan-detail-head .plan-name { margin: 0; }
+    .plan-detail-head h2 { margin: 0; }
+    .plan-detail-head .hours { font-size: 14px; color: var(--muted); }
+    .plan-detail-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .plan-detail-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    .plan-detail-block { font-size: 15px; color: var(--body); line-height: 1.6; }
+    .plan-detail-block h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand); margin-bottom: 12px; }
+    .plan-detail-block p { font-size: 15px; margin-bottom: 12px; }
+    .plan-detail-block ul { list-style: none; padding: 0; margin: 0; }
+    .plan-detail-block li { position: relative; padding: 8px 0 8px 22px; font-size: 14px; line-height: 1.5; }
+    .plan-detail-block li::before { content: ''; position: absolute; left: 0; top: 14px; width: 10px; height: 5px; border-left: 2px solid var(--brand); border-bottom: 2px solid var(--brand); transform: rotate(-45deg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    details.faq-item { background: white; border: 1px solid var(--divider); border-radius: 12px; padding: 20px 22px; }
+    details.faq-item[open] { border-color: var(--brand); }
+    details.faq-item summary { font-weight: 600; color: var(--ink); cursor: pointer; list-style: none; font-size: 16px; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after { content: '+'; float: right; color: var(--brand); font-size: 20px; line-height: 1; }
+    details.faq-item[open] summary::after { content: '−'; }
+    details.faq-item .answer { padding-top: 12px; font-size: 15px; color: var(--body); line-height: 1.6; }
+    .cta-banner { max-width: 1100px; margin: 0 auto; padding: 72px 40px; background: linear-gradient(135deg, var(--ink) 0%, #14213f 100%); color: white; border-radius: 28px; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner h2 { color: white; margin: 0 0 16px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .cta-banner p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 60ch; margin: 0 auto 28px; }
+    .footer-brand .nap { margin-top: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+    .footer-brand .nap strong { color: white; display: block; margin-bottom: 4px; }
+    .footer-brand .nap a { color: rgba(255,255,255,0.85); display: block; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <svg style="display:none">
+    <symbol id="globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48"/><ellipse cx="50" cy="50" rx="48" ry="22"/>
+      <ellipse cx="50" cy="50" rx="48" ry="10"/><line x1="50" y1="2" x2="50" y2="98"/>
+      <ellipse cx="50" cy="50" rx="24" ry="48"/><ellipse cx="50" cy="50" rx="10" ry="48"/>
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="plans.html" class="active">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="display:none;" id="navCta">Book a call</a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <div class="nav-drawer" id="navDrawer">
+      <ul >
+          <li><a href="services.html">Services</a></li>
+          <li><a href="plans.html" class="active">Plans</a></li>
+          <li><a href="case-studies.html">Case studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      <a href="contact.html" class="btn btn-primary drawer-cta">Book a call</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <span class="eyebrow">Monthly Service Plans</span>
+      <h1>Four plans. Tailored pricing.</h1>
+      <p class="lead">Outsourced electrical estimating on a monthly retainer. Pricing is tailored to your tender volume on a 20-minute call so you get a quote that matches your actual workload.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--brand-soft); padding-top: 56px;">
+    <div class="container">
+      <div class="plans-grid">
+
+        <div class="plan-card">
+          <div class="plan-name">Essential</div>
+          <h3>Occasional support.</h3>
+          <span class="plan-tag">1 day · 9 hours / month</span>
+          <ul class="plan-feats">
+            <li class="plan-feat">1–2 small tenders</li>
+            <li class="plan-feat">BOQs &amp; submissions</li>
+            <li class="plan-feat">Predictable monthly fee</li>
+            <li class="plan-feat">Top-up hours available</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Essential</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-name">Progress</div>
+          <h3>Steady tendering.</h3>
+          <span class="plan-tag">2 days · 18 hours / month</span>
+          <ul class="plan-feats">
+            <li class="plan-feat">2–4 tenders / month</li>
+            <li class="plan-feat">Sub &amp; material enquiries</li>
+            <li class="plan-feat">Consistent estimator</li>
+            <li class="plan-feat">Ongoing amendments</li>
+          </ul>
+          <a href="contact.html" class="btn btn-brand plan-cta">Discuss Progress</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Enhanced</div>
+          <h3>Active SMB volume.</h3>
+          <span class="plan-tag">4 days · 36 hours / month</span>
+          <ul class="plan-feats">
+            <li class="plan-feat">4–7 tenders / month</li>
+            <li class="plan-feat">Multi-package pricing</li>
+            <li class="plan-feat">Lead estimator + backup</li>
+            <li class="plan-feat">Live tender register</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Enhanced</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Priority</div>
+          <h3>Full integration.</h3>
+          <span class="plan-tag">6 days · 54 hours / month</span>
+          <ul class="plan-feats">
+            <li class="plan-feat">7–10+ tenders / month</li>
+            <li class="plan-feat">Priority queue</li>
+            <li class="plan-feat">BD bolt-on available</li>
+            <li class="plan-feat">Top-up hours included</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost plan-cta">Discuss Priority</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+
+      <h2>How to choose the right plan</h2>
+      <p>Tender volume is the simplest sizing input. If you're regularly pricing 1–2 tenders a month, Essential is enough. 2–4 tenders, Progress. 4–7 tenders with multi-package work, Enhanced. Past 7 tenders a month with consistent volume, Priority gives you a fully embedded estimating function.</p>
+      <p>Sector mix matters too. Industrial and specialist process work takes longer per tender than standard commercial fit-out. We'll talk through your typical project profile on the discovery call and recommend the plan that matches.</p>
+
+      <div class="plan-detail" id="essential">
+        <div class="plan-detail-head">
+          <span class="plan-name">Essential</span>
+          <h2>Occasional support</h2>
+          <span class="hours">· 9 hours / month</span>
+        </div>
+        <div class="plan-detail-grid">
+          <div class="plan-detail-block">
+            <h4>Who it fits</h4>
+            <p>Small contractors or sole traders who price 1–2 tenders a month and need predictable estimating support without the overhead of a full-time hire. Often start-up businesses or established firms with a director currently doing all the estimating.</p>
+            <h4>What you get</h4>
+            <ul>
+              <li>9 hours of estimating support per month</li>
+              <li>BOQ structure and submission pack for each tender</li>
+              <li>Predictable monthly fee, no surprise invoices</li>
+              <li>Top-up hours available month-by-month</li>
+              <li>30-day rolling, scale up when ready</li>
+            </ul>
+          </div>
+          <div class="plan-detail-block">
+            <h4>Typical client profile</h4>
+            <p>A growing electrical contractor turning over £200k–£800k annually, with the director still doing the bulk of the pricing. Essential takes the workload off without a long-term commitment.</p>
+            <h4>What it's not</h4>
+            <p>Not the right fit if you're pricing 3+ tenders a month — you'll run out of hours by the third week. Progress is the better starting point at that volume.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-detail" id="progress">
+        <div class="plan-detail-head">
+          <span class="plan-name">Progress</span>
+          <h2>Steady tendering</h2>
+          <span class="hours">· 18 hours / month · Most popular</span>
+        </div>
+        <div class="plan-detail-grid">
+          <div class="plan-detail-block">
+            <h4>Who it fits</h4>
+            <p>Established contractors with a consistent pipeline of 2–4 tenders a month. The plan most clients land on initially because it covers the typical SMB electrical contractor's pipeline with capacity to handle the occasional spike.</p>
+            <h4>What you get</h4>
+            <ul>
+              <li>18 hours of estimating support per month</li>
+              <li>Full take-off, BOQ and submission pack</li>
+              <li>Sub and material enquiries managed end-to-end</li>
+              <li>Consistent estimator across tenders</li>
+              <li>Ongoing tender amendments and post-tender query support</li>
+            </ul>
+          </div>
+          <div class="plan-detail-block">
+            <h4>Typical client profile</h4>
+            <p>A contractor turning over £800k–£3m a year, with directors who want to be on site or running operations rather than pricing tenders at the kitchen table. Often the first plan a contractor signs onto after trying us for a one-off tender.</p>
+            <h4>What it's not</h4>
+            <p>Not built for multi-package M&amp;E work or industrial schemes with heavy specialist content — Enhanced is more appropriate for those.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-detail" id="enhanced">
+        <div class="plan-detail-head">
+          <span class="plan-name">Enhanced</span>
+          <h2>Active SMB volume</h2>
+          <span class="hours">· 36 hours / month</span>
+        </div>
+        <div class="plan-detail-grid">
+          <div class="plan-detail-block">
+            <h4>Who it fits</h4>
+            <p>Established contractors pricing 4–7 tenders a month including multi-package or industrial work. Equivalent to having a full-time estimator at roughly half the loaded cost.</p>
+            <h4>What you get</h4>
+            <ul>
+              <li>36 hours of estimating support per month</li>
+              <li>Multi-package pricing for M&amp;E and complex industrial schemes</li>
+              <li>Lead estimator with a named backup</li>
+              <li>Live tender register you can view at any time</li>
+              <li>Priority response on tight deadlines</li>
+            </ul>
+          </div>
+          <div class="plan-detail-block">
+            <h4>Typical client profile</h4>
+            <p>A contractor turning over £3m–£8m a year, with operations to run and a tender pipeline that's outgrown what the director can price alone. Often replacing a junior estimator who's moved on, or filling capacity ahead of a senior hire.</p>
+            <h4>What it's not</h4>
+            <p>If your pipeline is consistently 8+ tenders a month, you'll be using Enhanced's hours by the third week. Priority gives you the headroom.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-detail" id="priority">
+        <div class="plan-detail-head">
+          <span class="plan-name">Priority</span>
+          <h2>Full integration</h2>
+          <span class="hours">· 54 hours / month</span>
+        </div>
+        <div class="plan-detail-grid">
+          <div class="plan-detail-block">
+            <h4>Who it fits</h4>
+            <p>Contractors with consistent tender volume of 7–10+ a month. REMC becomes a fully embedded estimating function — sitting alongside the commercial team rather than reporting in once a tender lands.</p>
+            <h4>What you get</h4>
+            <ul>
+              <li>54 hours of estimating support per month</li>
+              <li>Priority position in the tender queue across REMC clients</li>
+              <li>Top-up hours included for spike months</li>
+              <li>Business development bolt-on available — tender pipeline tracking, win-rate analysis</li>
+              <li>Direct line to the director for strategic discussion</li>
+            </ul>
+          </div>
+          <div class="plan-detail-block">
+            <h4>Typical client profile</h4>
+            <p>Established mid-size electrical or M&amp;E contractors with directors who want estimating fully delegated and capacity that scales with the pipeline. REMC's Priority Plan clients (Enlite Electrical, G-Tech Electrical, Oracle M&amp;E) all fit this profile.</p>
+            <h4>What it's not</h4>
+            <p>If you have a full-time in-house senior estimator already, Priority is overlap, not addition. Enhanced as a backup capacity model usually makes more sense in that case.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does each plan cost?</summary>
+          <div class="answer">Pricing is tailored on a 20-minute discovery call so the quote matches your actual workload and sector mix. We don't publish public rates because the same plan tier can cost meaningfully different amounts depending on tender complexity, sector, and submission cadence.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I switch between plans mid-year?</summary>
+          <div class="answer">Yes. All plans are 30-day rolling. Move up when tender volume spikes (acquisition, new framework, busy season) and down when it eases. Top-up hours are available within any plan without changing tier.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What happens to unused hours at the end of the month?</summary>
+          <div class="answer">Plan hours don't roll over — the plan is sized to your typical monthly capacity. If a quiet month leaves hours unused, we'll use the time on pipeline analysis, supplier framework review, or tender register tidying so it isn't wasted. If you need more in a busy month, top-up hours are billed at your plan rate.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a minimum commitment?</summary>
+          <div class="answer">No. All plans are 30-day rolling with no minimum term. We win the renewal every month by being useful that month.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What does "pay-on-win" mean?</summary>
+          <div class="answer">For one-off tenders priced outside a plan, REMC's fee sits inside your tender prelims — so if you win the job, our fee comes from the job revenue and effectively cost you nothing on a net-margin basis. If you don't win the bid, we still want to work with you next time. Monthly plans are billed monthly regardless of win/loss because we're producing the estimating work whether the bid lands or not.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with M&amp;E contractors as well as electrical-only?</summary>
+          <div class="answer">Yes — Priority Plan client Oracle M&amp;E is a combined mechanical &amp; electrical business. We price the electrical scope alongside their internal mechanical estimating team. The integration adds 1–2 weeks to onboarding but works smoothly once scope-split conventions are agreed.</div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <span class="eyebrow" style="background: rgba(255,255,255,0.1); color: white;">20-minute discovery call</span>
+        <h2>Send me your last three tenders and I'll recommend the right plan.</h2>
+        <p>No pitch, no obligation. Even if REMC isn't the right fit, you'll leave the call with three concrete observations you can use anyway.</p>
+        <div class="ctas">
+          <a href="contact.html" class="btn btn-brand">Book my 20-minute call →</a>
+          <a href="https://wa.me/447822033278" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="REMC — home"><img src="logo-white.svg" alt="REMC" class="logo-img" width="96" height="30"></a>
+          <p>Outsourced electrical estimating for UK contractors — domestic, commercial, and industrial.</p>
+          <div class="nap">
+            <strong>REMC Ltd</strong>
+            Glasgow, Scotland · United Kingdom<br>
+            Working with contractors UK-wide
+            <a href="mailto:enquire@remc.uk">enquire@remc.uk</a>
+            <a href="https://wa.me/447822033278">+44 7822 033278</a>
+            <a href="https://www.linkedin.com/company/remc-uk">LinkedIn →</a>
+          </div>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="plans.html">Monthly Service Plans</a></li>
+            <li><a href="case-studies.html">Case studies</a></li>
+            <li><a href="about.html">About Liam</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Service areas</h4>
+          <ul>
+            <li><a href="glasgow.html">Glasgow</a></li>
+            <li style="color: rgba(255,255,255,0.4);">Edinburgh (coming)</li>
+            <li style="color: rgba(255,255,255,0.4);">Manchester (coming)</li>
+            <li style="color: rgba(255,255,255,0.4);">London (coming)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <div>© REMC Ltd 2026 · Registered in Scotland · Co. No. SC722394 · Glasgow, Scotland</div>
+        <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const text = a.textContent.trim();
+      if (/^(Book a|Book my|Discuss\b|Hold my)/i.test(text)) {
+        if (typeof Calendly !== 'undefined') {
+          e.preventDefault();
+          Calendly.initPopupWidget({url: 'https://calendly.com/enquire-remc'});
+        }
+      }
+    });
+  </script>
+
+  <script id="navScript">
+    (function() {
+      var header = document.getElementById('header') || document.querySelector('header');
+      if (header) window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 8); });
+      var navCta = document.getElementById('navCta');
+      if (navCta) {
+        var mq = window.matchMedia('(min-width: 1024px)');
+        navCta.style.display = mq.matches ? '' : 'none';
+        mq.addEventListener('change', function(e) { navCta.style.display = e.matches ? '' : 'none'; });
+      }
+      var navToggle = document.getElementById('navToggle');
+      var navDrawer = document.getElementById('navDrawer');
+      if (navToggle && navDrawer) {
+        navToggle.addEventListener('click', function() {
+          var open = navDrawer.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', open);
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        navDrawer.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A') {
+            navDrawer.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
