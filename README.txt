@@ -18,7 +18,7 @@ CORE PAGES
   glasgow.html                     Glasgow location page (SEO-targeted)
 
 COMMERCE
-  store.html                       Stripe-backed downloads (Start-Up Pack, Templates)
+  store.html                       Gumroad-backed downloads (Start-Up Pack, Templates)
 
 CONTENT
   blog.html                        Blog index
@@ -51,7 +51,9 @@ NOT DEPLOYED — FULFILMENT ONLY
   _private/products/               Paid store products (The Estimator, The Enquiry
                                    Register spreadsheets). Kept OUT of the public
                                    web root so they aren't freely downloadable —
-                                   deliver them via Stripe after purchase.
+                                   deliver them via Gumroad after purchase (Gumroad
+                                   hosts the files directly once products are set up
+                                   there; these should then be removed from the repo).
 
 See GO-LIVE.md for the full pre-launch checklist. Search the HTML for
 "GO-LIVE TODO" to jump straight to each thing that still needs wiring.
@@ -88,11 +90,12 @@ The canonical URLs in each <head> already reflect this production routing patter
 THIRD-PARTY INTEGRATIONS (need wiring)
 ==========================================
 
-STRIPE (store.html)
+GUMROAD (store.html)
   - Comment at top of file flags exactly where to swap in real values
-  - Replace publishable key (pk_live_REPLACE_WITH_YOUR_PUBLISHABLE_KEY)
-  - Replace Buy Button IDs for both products (Start-Up Pack £150, Commercial Templates £100)
-  - Set success URL on each Buy Button to a thank-you page that delivers the download
+  - Create both products on Gumroad (Start-Up Pack £150, Commercial Templates £100),
+    attaching the files from _private/products/
+  - Replace the two GUMROAD_REPLACE_... permalinks with the real product URLs
+  - Once both products are live on Gumroad, remove _private/products/ from this repo
 
 CALENDLY (sitewide)
   - Already wired to: https://calendly.com/enquire-remc
@@ -129,7 +132,7 @@ PLACEHOLDERS TO SWAP BEFORE GOING LIVE
   - https://remc.uk/logo.png — drop a 512×512 logo at this path
   - https://remc.uk/og-image.jpg — create 1200×630 social share image
   - LinkedIn URL linkedin.com/in/liammacleod-remc — confirm slug
-  - Stripe Buy Button IDs in store.html (search for "REPLACE" in comments)
+  - Gumroad product permalinks in store.html (search for "REPLACE" in comments)
   - Glasgow office street address in glasgow.html schema (currently placeholder)
 
 ==========================================
@@ -148,7 +151,7 @@ DEPLOY
    DO NOT deploy the _private/ folder (paid products — see above).
 2. Set up URL routing per the URL STRUCTURE section above
 3. Add robots.txt, sitemap.xml, favicons
-4. Wire Stripe with live keys
+4. Wire Gumroad with live product permalinks
 5. Test all CTAs and Calendly popup end-to-end
 
 ==========================================
