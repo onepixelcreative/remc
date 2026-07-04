@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Only publish known public web-root assets. Never recurses into
+      # subdirectories, so _private/ (paid products) is never copied here
+      # regardless of what gets added there in future.
+      - name: Stage public site files
+        run: |
+          set -e
+          mkdir -p _site
+          shopt -s nullglob
+          for f in *.html *.css *.svg *.mp4 *.pdf *.jpg *.jpeg *.png *.webp *.ico *.woff *.woff2; do
+            cp "$f" _site/
+          done
+          touch _site/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
