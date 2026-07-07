@@ -4,6 +4,7 @@
    stay in each page's inline <style> and override these.
    ========================================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+    img, svg, video { max-width: 100%; min-width: 0; }
     :root {
       --brand: #2147f9; --brand-dark: #1837D6; --brand-light: #4d6dfb;
       --brand-tint: #EEF2F8; --brand-soft: #F7F9FE;
@@ -18,8 +19,6 @@
       color: var(--body); background: var(--bg); line-height: 1.55; font-size: 17px;
       -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     }
-    body::before { content: ''; display: block; height: 3px; background: var(--accent-red); }
-
     h1, h2, h3, h4 {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
       color: var(--ink); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em;
