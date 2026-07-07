@@ -52,29 +52,52 @@
 
     /* ── Carousel ── */
     .carousel-hint { text-align: center; font-size: 13px; color: var(--body-muted, #888); padding: 20px 0 4px; letter-spacing: 0.04em; }
-    .carousel-section { padding: 32px 0 64px; }
+    .carousel-section { padding: 56px 0 64px; overflow: hidden; }
+    /* Cover Flow 3D stage — cards are absolutely positioned and placed in 3D by JS */
     .carousel-track {
-      display: flex; flex-wrap: nowrap; gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      padding: 8px 12% 24px;
-      scrollbar-width: none;
+      position: relative;
+      height: 500px;
+      margin: 0 auto;
+      perspective: 1600px;
+      touch-action: pan-y;
+      outline: none;
     }
-    .carousel-track::-webkit-scrollbar { display: none; }
     .c-card {
-      flex: 0 0 76%; max-width: 480px;
-      scroll-snap-align: center;
+      position: absolute; top: 50%; left: 50%;
+      width: clamp(260px, 82vw, 380px);
+      height: 460px;
+      box-sizing: border-box;
       background: #fff;
       border: 1.5px solid var(--divider-soft, #e8eaf0);
       border-radius: 20px;
-      padding: 32px 28px 28px;
-      display: flex; flex-direction: column; gap: 14px;
+      padding: 30px 28px 26px;
+      display: flex; flex-direction: column; gap: 13px;
+      overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,.04);
-      transition: box-shadow .2s;
+      transform-origin: center center;
+      backface-visibility: hidden;
+      transition: transform .55s cubic-bezier(.22,.61,.28,1), opacity .5s ease, box-shadow .3s ease;
+      will-change: transform, opacity;
     }
-    .c-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.10); }
+    .c-card:not(.is-active) { cursor: pointer; }
+    .c-card.is-active {
+      overflow-y: auto;
+      scrollbar-width: none;
+      box-shadow: 0 16px 44px rgba(13,28,59,.18);
+    }
+    .c-card.is-active::-webkit-scrollbar { display: none; }
+    /* soft bottom fade hints at clipped copy on the tilted side cards */
+    .c-card:not(.is-active)::after {
+      content: ''; position: absolute; inset: 0; border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 62%, rgba(255,255,255,.6) 100%);
+      pointer-events: none;
+    }
+    .c-card.is-bolton:not(.is-active)::after {
+      background: linear-gradient(180deg, rgba(240,243,255,0) 62%, rgba(240,243,255,.65) 100%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .c-card { transition: opacity .3s ease; }
+    }
     .c-card.is-featured {
       border-color: var(--brand, #2147f9);
       border-width: 2px;
@@ -221,7 +244,7 @@
         <p>Need a single bid priced this week? Send the documents over and we'll quote a fixed fee, accept or decline within 24 hours, and turn the tender around in time for your submission deadline.</p>
         <ul class="c-key-list">
           <li>Fixed-fee quoted within 24 hours of brief</li>
-          <li>Pay-on-win pricing — fees sit inside your tender prelims</li>
+          <li>Cost-neutral when you win — build the fee into your tender prelims so it's recovered in the price</li>
           <li>Same delivery standard as our retainer clients</li>
           <li>Easy to upgrade to a Monthly Service Plan if REMC fits</li>
         </ul>
@@ -287,7 +310,7 @@
         <ul class="c-key-list">
           <li>Single point of contact from receipt to submission</li>
           <li>All services coordinated — no handoff gaps</li>
-          <li>Pay-on-win pricing available — fee sits in your prelims</li>
+          <li>Cost-neutral when you win — the fee sits in your prelims and nets to zero on a win</li>
           <li>Available as one-off or via Monthly Service Plan</li>
         </ul>
         <a href="contact.html" class="c-card-cta">Book a discovery call →</a>
@@ -447,51 +470,84 @@
     (function() {
       const track = document.getElementById('carouselTrack');
       const dotsEl = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
       const cards = Array.from(track.querySelectorAll('.c-card'));
-      const FEATURED = 4; // 0-based index of "Full tender submission"
+      const FEATURED = 4;   // "Full tender submission"
+      const MAX_VISIBLE = 3; // cards either side of centre still rendered
+      let active = FEATURED;
 
       const dots = cards.map((_, i) => {
         const d = document.createElement('button');
-        d.className = 'carousel-dot' + (i === FEATURED ? ' active' : '');
-        d.setAttribute('aria-label', 'Go to card ' + (i + 1));
-        d.addEventListener('click', () => scrollTo(i));
+        d.className = 'carousel-dot';
+        d.type = 'button';
+        d.setAttribute('aria-label', 'Show service ' + (i + 1));
+        d.addEventListener('click', () => go(i));
         dotsEl.appendChild(d);
         return d;
       });
 
-      function scrollTo(i) {
-        const card = cards[i];
-        const trackRect = track.getBoundingClientRect();
-        const cardRect = card.getBoundingClientRect();
-        const offset = cardRect.left - trackRect.left + track.scrollLeft - (trackRect.width - cardRect.width) / 2;
-        track.scrollTo({ left: offset, behavior: 'smooth' });
-      }
-
-      function updateDots() {
-        const center = track.scrollLeft + track.clientWidth / 2;
-        let closest = 0, minDist = Infinity;
-        cards.forEach((c, i) => {
-          const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
-          if (dist < minDist) { minDist = dist; closest = i; }
+      // Position every card in 3D relative to the active (centre) card.
+      function layout() {
+        const w = cards[0].getBoundingClientRect().width || 340;
+        const spacing = Math.min(w * 0.52, 230);
+        cards.forEach((card, i) => {
+          const o = i - active;          // signed offset from centre
+          const ao = Math.abs(o);
+          const visible = ao <= MAX_VISIBLE;
+          const x = o * spacing;
+          const rot = o === 0 ? 0 : (o < 0 ? 44 : -44);
+          const scale = o === 0 ? 1 : Math.max(0.7, 0.86 - (ao - 1) * 0.07);
+          const z = o === 0 ? 0 : -ao * 90;
+          card.style.transform =
+            `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`;
+          card.style.zIndex = String(100 - ao);
+          card.style.opacity = visible ? (o === 0 ? '1' : String(Math.max(0.32, 1 - ao * 0.24))) : '0';
+          card.style.pointerEvents = visible ? 'auto' : 'none';
+          card.classList.toggle('is-active', o === 0);
+          card.setAttribute('aria-hidden', o === 0 ? 'false' : 'true');
         });
-        dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+        dots.forEach((d, i) => d.classList.toggle('active', i === active));
       }
 
-      track.addEventListener('scroll', updateDots, { passive: true });
-      document.getElementById('carouselPrev').addEventListener('click', () => {
-        const center = track.scrollLeft + track.clientWidth / 2;
-        let cur = 0;
-        cards.forEach((c, i) => { if (c.offsetLeft + c.offsetWidth / 2 < center + 1) cur = i; });
-        scrollTo(Math.max(0, cur - 1));
-      });
-      document.getElementById('carouselNext').addEventListener('click', () => {
-        const center = track.scrollLeft + track.clientWidth / 2;
-        let cur = 0;
-        cards.forEach((c, i) => { if (c.offsetLeft + c.offsetWidth / 2 < center + 1) cur = i; });
-        scrollTo(Math.min(cards.length - 1, cur + 1));
+      function go(i) {
+        active = Math.max(0, Math.min(cards.length - 1, i));
+        layout();
+      }
+
+      // Click a side card to bring it to the centre (but let its links work).
+      cards.forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+          if (i === active || e.target.closest('a')) return;
+          e.preventDefault();
+          go(i);
+        });
       });
 
-      scrollTo(FEATURED);
+      prevBtn.addEventListener('click', () => go(active - 1));
+      nextBtn.addEventListener('click', () => go(active + 1));
+
+      // Keyboard support when the stage is focused.
+      track.setAttribute('tabindex', '0');
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); go(active - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(active + 1); }
+      });
+
+      // Touch swipe.
+      let startX = null;
+      track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', (e) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) go(active + (dx < 0 ? 1 : -1));
+        startX = null;
+      }, { passive: true });
+
+      let rt;
+      window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 120); });
+
+      layout();
     })();
   </script>
 
